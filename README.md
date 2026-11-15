@@ -61,10 +61,11 @@ When deployed to GitHub Pages, the site can be accessed at:
 4. **Hands-On Workshop Guide (MCP & A2A)**:
    - **Lab 1**: Production MCP Servers & Hardening
    - **Lab 2**: Multi-Agent A2A Interoperability
-   - **Zero-Setup Infrastructure Directive**: Cloud devcontainers & standby offline fallback USB.
+   - **Lab Prerequisites**: Provided directly to attendees upon confirmed registration.
 5. **Featured Speakers & Technical Leads**:
-   - Distinguished keynote speakers, systems architects, and track facilitators.
+   - Program structure with speaker photos and designated session topics.
+   - Live schedule search allowing attendees to filter sessions by speaker or topic.
    - Community Call for Speakers & Lightning Talk proposal submissions.
-6. **Ecosystem Partners & Sponsors**:
-   - Technical partners including IEEE Dallas Section, AAIF Global, OpenAgentic WG, and Dallas AI Forum.
+6. **Ecosystem Partners & Sponsors (IEEE Metrocon & Chainday Format)**:
+   - Technical co-sponsorship with IEEE Dallas Section, AAIF Global, OpenAgentic WG, and Dallas AI Forum.
    - Tiered sponsorship showcase (Platinum, Gold, Silver/Reception) and prospectus inquiries.

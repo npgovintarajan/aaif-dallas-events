@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyFilters() {
     const activeTab = document.querySelector('.filter-tab.active')?.getAttribute('data-filter') || 'all';
     const query = (searchInput?.value || '').toLowerCase().trim();
+    let visibleCount = 0;
 
     scheduleItems.forEach(item => {
       let matchesTab = false;
@@ -30,14 +31,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const itemText = (item.innerText || '').toLowerCase();
       const itemTags = (item.getAttribute('data-tags') || '').toLowerCase();
-      const matchesSearch = !query || itemText.includes(query) || itemTags.includes(query);
+      
+      // Multi-word search matching: each word in the query must match either text or tags
+      const queryWords = query.split(/\s+/).filter(Boolean);
+      const matchesSearch = queryWords.length === 0 || queryWords.every(word => 
+        itemText.includes(word) || itemTags.includes(word)
+      );
 
       if (matchesTab && matchesSearch) {
         item.style.display = '';
+        visibleCount++;
       } else {
         item.style.display = 'none';
       }
     });
+
+    // Handle "No matching sessions" state
+    let emptyState = document.getElementById('schedule-empty-state');
+    if (visibleCount === 0) {
+      if (!emptyState) {
+        emptyState = document.createElement('div');
+        emptyState.id = 'schedule-empty-state';
+        emptyState.className = 'p-8 rounded-2xl bg-slate-900/60 border border-slate-800 text-center text-slate-400 text-sm font-mono';
+        emptyState.innerHTML = '<p class="text-white font-bold mb-1">No sessions match your search</p><p class="text-xs text-slate-500">Try searching for a speaker (e.g. "Keynote", "Systems Lead"), topic (e.g. "MCP", "Firecracker"), or reset the track filter.</p>';
+        document.getElementById('schedule-list')?.appendChild(emptyState);
+      }
+      emptyState.style.display = '';
+    } else if (emptyState) {
+      emptyState.style.display = 'none';
+    }
   }
 
   // Tab click events

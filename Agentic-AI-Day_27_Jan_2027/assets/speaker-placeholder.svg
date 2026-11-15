@@ -1,0 +1,21 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="avatarGrad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a" />
+      <stop offset="1" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38bdf8" />
+      <stop offset="1" stop-color="#818cf8" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="32" fill="url(#avatarGrad)" />
+  <rect x="1.5" y="1.5" width="197" height="197" rx="30.5" stroke="url(#borderGrad)" stroke-width="3" stroke-opacity="0.3" />
+  <!-- Silhouette Head -->
+  <circle cx="100" cy="78" r="34" fill="#334155" />
+  <!-- Silhouette Shoulders -->
+  <path d="M42 165C42 133 67 122 100 122C133 122 158 133 158 165V170H42V165Z" fill="#334155" />
+  <!-- Camera / Speaker badge overlay -->
+  <circle cx="146" cy="146" r="22" fill="#0284c7" />
+  <path d="M141 138H151L153 140H157C158.1 140 159 140.9 159 142V152C159 153.1 158.1 154 157 154H135C133.9 154 133 153.1 133 152V142C133 140.9 133.9 140 135 140H139L141 138ZM146 151C148.76 151 151 148.76 151 146C151 143.24 148.76 141 146 141C143.24 141 141 143.24 141 146C141 148.76 143.24 151 146 151Z" fill="white" />
+</svg>
