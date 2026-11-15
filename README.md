@@ -62,3 +62,9 @@ When deployed to GitHub Pages, the site can be accessed at:
    - **Lab 1**: Production MCP Servers & Hardening
    - **Lab 2**: Multi-Agent A2A Interoperability
    - **Zero-Setup Infrastructure Directive**: Cloud devcontainers & standby offline fallback USB.
+5. **Featured Speakers & Technical Leads**:
+   - Distinguished keynote speakers, systems architects, and track facilitators.
+   - Community Call for Speakers & Lightning Talk proposal submissions.
+6. **Ecosystem Partners & Sponsors**:
+   - Technical partners including IEEE Dallas Section, AAIF Global, OpenAgentic WG, and Dallas AI Forum.
+   - Tiered sponsorship showcase (Platinum, Gold, Silver/Reception) and prospectus inquiries.
