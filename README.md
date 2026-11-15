@@ -62,7 +62,3 @@ When deployed to GitHub Pages, the site can be accessed at:
    - **Lab 1**: Production MCP Servers & Hardening
    - **Lab 2**: Multi-Agent A2A Interoperability
    - **Zero-Setup Infrastructure Directive**: Cloud devcontainers & standby offline fallback USB.
-5. **Day-Of Risk Mitigation & Operations Playbook**:
-   - **The 15-Second Failover Rule**: Automatic switch to pre-recorded backup video if live API calls stall.
-   - **Audience Q&A Pacing Protocol**: Strict microphone custody and stage timer visual cues (`10m`, `5m`, `STOP`).
-   - **Volunteer & Staffing Structure**: Organizational allocation across Registration, Stage, Technical TAs (1:25 ratio), and A/V floats.

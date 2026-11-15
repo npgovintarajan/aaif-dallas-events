@@ -90,7 +90,6 @@
         <a href="#schedule" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Schedule</a>
         <a href="#sessions" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Technical Sessions</a>
         <a href="#workshops" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Hands-On Labs</a>
-        <a href="#playbook" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Operations & Staff</a>
       </nav>
 
       <!-- Action Buttons -->
@@ -157,9 +156,9 @@
             <i data-lucide="code" class="w-4 h-4 text-emerald-400"></i>
             <span>Hands-On Workshop Guide</span>
           </a>
-          <a href="#playbook" class="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-sm bg-slate-900/60 hover:bg-slate-800 text-slate-300 border border-slate-800 flex items-center justify-center gap-2 transition">
-            <i data-lucide="check-circle" class="w-4 h-4 text-amber-400"></i>
-            <span>Operations & Protocol</span>
+          <a href="#sessions" class="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-sm bg-slate-900/60 hover:bg-slate-800 text-slate-300 border border-slate-800 flex items-center justify-center gap-2 transition">
+            <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
+            <span>Technical Scope</span>
           </a>
         </div>
       </div>
@@ -840,137 +839,6 @@
     </div>
   </section>
 
-  <!-- Section 5: Day-Of Risk Mitigation & Operations Playbook -->
-  <section id="playbook" class="py-16 border-t border-slate-800/80 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-        <div>
-          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-amber-400">Section 5</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Operations Playbook & Staffing Structure</h2>
-        </div>
-        <p class="text-slate-400 text-sm max-w-xl mt-3 md:mt-0">
-          Strict operational guardrails to guarantee schedule integrity, failover readiness, and seamless attendee experience.
-        </p>
-      </div>
-
-      <!-- Playbook Rules Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-
-        <!-- 15-Second Failover Rule -->
-        <div class="p-6 sm:p-7 rounded-2xl bg-slate-900/80 border border-amber-500/30 hover:border-amber-500/60 transition">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
-              <i data-lucide="timer" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <span class="text-xs font-mono text-amber-400 font-bold uppercase">Critical Directive</span>
-              <h3 class="text-lg font-bold text-white">Live API Latency & 15-Second Failover</h3>
-            </div>
-          </div>
-          <p class="text-sm text-slate-300 leading-relaxed mb-4">
-            Live multi-agent demonstrations carry inherent risk of LLM rate limits, latency spikes, or cloud downtime.
-          </p>
-          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
-            <li class="flex items-start gap-2">
-              <span class="text-amber-400 font-bold">•</span>
-              <span><strong>Confidence Countdown:</strong> Presenters demonstrating live execution must maintain an active countdown timer on their confidence monitor.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-400 font-bold">•</span>
-              <span><strong>The 15-Second Cut:</strong> If a live loop stalls or errors for &gt;15 seconds, the Stage Manager immediately toggles display to pre-recorded backup video.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-400 font-bold">•</span>
-              <span><strong>24-Hour Pre-Flight:</strong> All presenters must submit high-res screen recordings of successful execution 24 hours prior to event start.</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Q&A Mic Protocol -->
-        <div class="p-6 sm:p-7 rounded-2xl bg-slate-900/80 border border-cyan-500/30 hover:border-cyan-500/60 transition">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
-              <i data-lucide="mic" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <span class="text-xs font-mono text-cyan-400 font-bold uppercase">Audience Management</span>
-              <h3 class="text-lg font-bold text-white">Q&A Pacing & Microphone Protocol</h3>
-            </div>
-          </div>
-          <p class="text-sm text-slate-300 leading-relaxed mb-4">
-            Uncontrolled microphone handling causes session overrun and delays. Physical microphone custody is strictly maintained.
-          </p>
-          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
-            <li class="flex items-start gap-2">
-              <span class="text-cyan-400 font-bold">•</span>
-              <span><strong>Never Hand Over the Mic:</strong> Dedicated mic runners hold the wireless handheld microphone while the attendee speaks, reclaiming it instantly.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-cyan-400 font-bold">•</span>
-              <span><strong>Visual Stage Cue Cards:</strong> Stage Manager issues strict visual cues (<code class="text-cyan-400 bg-cyan-950 px-1 rounded">10m</code>, <code class="text-amber-400 bg-amber-950 px-1 rounded">5m</code>, <code class="text-rose-400 bg-rose-950 px-1 rounded">STOP</code>) to enforce time limits.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-cyan-400 font-bold">•</span>
-              <span><strong>Hallway Track Handoff:</strong> Overflow questions are systematically deferred to the Dining Hall / Foyer networking sessions.</span>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Staffing & Volunteer Allocations Hierarchy -->
-      <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/60 border border-slate-800">
-        <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
-          <i data-lucide="users" class="w-5 h-5 text-indigo-400"></i>
-          Volunteer & Staffing Allocations
-        </h3>
-        <p class="text-sm text-slate-400 mb-8">
-          Hierarchical operational structure coordinating registration, main stage, hands-on workshop labs, and audio/video streaming.
-        </p>
-
-        <!-- Visual Org Chart Cards -->
-        <div class="flex flex-col items-center">
-          <!-- Top Leader -->
-          <div class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm shadow-xl shadow-indigo-600/20 border border-indigo-400/40 text-center mb-6">
-            <span class="text-[10px] uppercase font-mono tracking-widest text-blue-200 block">Command & Control</span>
-            Event Lead Manager (1 Lead)
-          </div>
-
-          <!-- Connecting Line -->
-          <div class="w-px h-6 bg-slate-700 -mt-6 mb-6"></div>
-
-          <!-- Staffing Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
-            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
-              <div class="text-xs font-mono font-bold text-cyan-400 mb-1">Registration Leads</div>
-              <div class="text-base font-bold text-white">2 – 3 Staff</div>
-              <p class="text-xs text-slate-400 mt-1">Badge distribution, check-in, credential verification & Wi-Fi onboarding.</p>
-            </div>
-
-            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
-              <div class="text-xs font-mono font-bold text-purple-400 mb-1">Stage & Speakers</div>
-              <div class="text-base font-bold text-white">2 – 4 Staff</div>
-              <p class="text-xs text-slate-400 mt-1">Stage Manager (1), Speaker Wrangler (1), Q&A Mic Runners (2) with cue cards.</p>
-            </div>
-
-            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
-              <div class="text-xs font-mono font-bold text-emerald-400 mb-1">Technical TA Team</div>
-              <div class="text-base font-bold text-white">3 – 4 Staff</div>
-              <p class="text-xs text-slate-400 mt-1">Maintained at strict 1:25 TA-to-attendee ratio in hands-on lab track.</p>
-            </div>
-
-            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
-              <div class="text-xs font-mono font-bold text-amber-400 mb-1">Stream, AV & Float</div>
-              <div class="text-base font-bold text-white">1 – 2 Staff</div>
-              <p class="text-xs text-slate-400 mt-1">Catering replenishment, room overflow management, and livestream stability.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
   <!-- Community & Footer Section -->
   <footer class="py-14 border-t border-slate-800/80 bg-[#05070d]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -993,8 +861,6 @@
           <a href="#sessions" class="hover:text-white transition">Technical Sessions</a>
           <span class="text-slate-700">•</span>
           <a href="#workshops" class="hover:text-white transition">Hands-On Labs</a>
-          <span class="text-slate-700">•</span>
-          <a href="#playbook" class="hover:text-white transition">Operations</a>
         </div>
       </div>
 
