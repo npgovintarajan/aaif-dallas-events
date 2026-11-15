@@ -1,0 +1,97 @@
+/* Custom Styles for Agentic AI Day Webpage */
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism card styles */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070a12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Pulse Glow Keyframes */
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.04);
+  }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 8s ease-in-out infinite;
+}
+
+/* Code block formatting */
+pre code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.825rem;
+  line-height: 1.5;
+}
+
+/* Interactive Filter Active State */
+.filter-tab.active {
+  background: #06b6d4 !important;
+  color: #020617 !important;
+  font-weight: 700;
+}
+
+/* Print Stylesheet for Physical Run-of-Show handouts */
+@media print {
+  header, footer, #schedule-tabs, #schedule-search, .hero-actions, button {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt;
+  }
+
+  .schedule-item {
+    page-break-inside: avoid;
+    border: 1px solid #cbd5e1 !important;
+    background: #f8fafc !important;
+    color: #0f172a !important;
+    margin-bottom: 8px !important;
+  }
+
+  .schedule-item * {
+    color: #0f172a !important;
+  }
+
+  h1, h2, h3, h4 {
+    color: #000000 !important;
+  }
+
+  .text-transparent {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+  }
+}
