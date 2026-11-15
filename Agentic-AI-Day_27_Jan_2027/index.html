@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentic AI Day — AAIF Dallas Chapter | Production Readiness & Run-of-Show Guide</title>
+  <meta name="description" content="Agentic AI Day: Full-day technical workshop and conference on architectural patterns, multi-agent interoperability, MCP, A2A, and enterprise security. Hosted by AAIF Dallas." />
+  <meta name="theme-color" content="#090d16" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Agentic AI Day — AAIF Dallas Chapter" />
+  <meta property="og:description" content="Production readiness, architectural patterns, multi-agent interoperability, and enterprise security." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+            },
+            cyber: {
+              dark: '#070a12',
+              card: '#0f172a',
+              cardBorder: '#1e293b',
+              accent: '#38bdf8',
+              purple: '#a855f7',
+              amber: '#f59e0b',
+              rose: '#f43f5e'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-[#070a12] text-slate-200 font-sans antialiased selection:bg-cyan-500 selection:text-black">
+  <!-- Top Background Ambient Glow -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gradient-to-tr from-cyan-600/15 via-blue-600/10 to-purple-600/15 blur-[120px] rounded-full"></div>
+    <div class="absolute top-[800px] right-0 w-[500px] h-[450px] bg-emerald-500/10 blur-[130px] rounded-full"></div>
+    <div class="absolute top-[1800px] left-0 w-[600px] h-[500px] bg-indigo-500/10 blur-[140px] rounded-full"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b12_1px,transparent_1px),linear-gradient(to_bottom,#1e293b12_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#070a12]/80 border-b border-slate-800/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo & Subtitle -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="h-10 px-2 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center shadow-inner group-hover:border-cyan-500/40 transition">
+          <img src="assets/AAIF_Primary_Logo_White.svg" alt="AAIF Logo" class="h-7 w-auto object-contain" />
+        </div>
+        <div class="hidden sm:flex flex-col">
+          <span class="text-xs uppercase tracking-widest font-semibold text-cyan-400">Dallas Chapter</span>
+          <span class="text-sm font-bold text-white tracking-tight flex items-center gap-1.5">
+            Agentic AI Day
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
+        <a href="#overview" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Overview</a>
+        <a href="#schedule" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Schedule</a>
+        <a href="#sessions" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Technical Sessions</a>
+        <a href="#workshops" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Hands-On Labs</a>
+        <a href="#playbook" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Operations & Staff</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2.5">
+        <button onclick="window.print()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 transition" title="Print Run-of-Show Guide">
+          <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+          <span>Print / PDF</span>
+        </button>
+        <a href="#schedule" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/35 transition-all">
+          <span>Run of Show</span>
+          <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-4xl mx-auto">
+        <!-- Event Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-6 shadow-sm shadow-cyan-500/10">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          <span>AAIF DALLAS COMMUNITY EVENT • RUN-OF-SHOW GUIDE</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
+          Agentic AI <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400">Day</span>
+        </h1>
+
+        <!-- Subtitle & Focus -->
+        <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto mb-8">
+          Production readiness, architectural patterns, multi-agent interoperability, and enterprise security. Moving from single-prompt wrappers to resilient, autonomous multi-agent systems.
+        </p>
+
+        <!-- Key Pillar Chips -->
+        <div class="flex flex-wrap items-center justify-center gap-2.5 mb-10 text-xs sm:text-sm font-mono">
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-1.5">
+            <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
+            Dual Afternoon Tracks
+          </span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-1.5">
+            <i data-lucide="terminal" class="w-4 h-4 text-emerald-400"></i>
+            Zero-Setup Cloud Labs
+          </span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-1.5">
+            <i data-lucide="shield-check" class="w-4 h-4 text-purple-400"></i>
+            MCP & A2A Protocols
+          </span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-1.5">
+            <i data-lucide="map-pin" class="w-4 h-4 text-amber-400"></i>
+            Dallas, TX
+          </span>
+        </div>
+
+        <!-- Hero Actions -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+          <a href="#schedule" class="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 shadow-xl shadow-cyan-500/20 flex items-center justify-center gap-2 transition">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Explore Full Schedule</span>
+          </a>
+          <a href="#workshops" class="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-sm bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 flex items-center justify-center gap-2 transition">
+            <i data-lucide="code" class="w-4 h-4 text-emerald-400"></i>
+            <span>Hands-On Workshop Guide</span>
+          </a>
+          <a href="#playbook" class="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-sm bg-slate-900/60 hover:bg-slate-800 text-slate-300 border border-slate-800 flex items-center justify-center gap-2 transition">
+            <i data-lucide="check-circle" class="w-4 h-4 text-amber-400"></i>
+            <span>Operations & Protocol</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Bar -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+        <div class="p-4 sm:p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
+          <div class="text-xs uppercase tracking-wider font-mono text-slate-400 mb-1">Audience</div>
+          <div class="text-base sm:text-lg font-bold text-white">Staff & Architects</div>
+          <div class="text-xs text-slate-500 mt-1">Engineers, AI Researchers & Leads</div>
+        </div>
+        <div class="p-4 sm:p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
+          <div class="text-xs uppercase tracking-wider font-mono text-slate-400 mb-1">Morning Structure</div>
+          <div class="text-base sm:text-lg font-bold text-cyan-400">Dual Keynotes & Core</div>
+          <div class="text-xs text-slate-500 mt-1">Stateful patterns & discovery</div>
+        </div>
+        <div class="p-4 sm:p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
+          <div class="text-xs uppercase tracking-wider font-mono text-slate-400 mb-1">Afternoon Tracks</div>
+          <div class="text-base sm:text-lg font-bold text-purple-400">Track A & Track B</div>
+          <div class="text-xs text-slate-500 mt-1">Auditorium Deep-Dives + Lab</div>
+        </div>
+        <div class="p-4 sm:p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
+          <div class="text-xs uppercase tracking-wider font-mono text-slate-400 mb-1">Lab Environment</div>
+          <div class="text-base sm:text-lg font-bold text-emerald-400">Zero-Setup Rule</div>
+          <div class="text-xs text-slate-500 mt-1">Pre-provisioned cloud devcontainers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Event Overview & Architecture -->
+  <section id="overview" class="py-16 border-t border-slate-800/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Section 1</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Event Architecture & Objectives</h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-xl mt-3 md:mt-0">
+          Engineered for systems architects, staff engineers, AI researchers, and technical leaders bridging the gap between toy prompts and production agent clusters.
+        </p>
+      </div>
+
+      <!-- Overview Cards Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Track A Card -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-900/40 border border-slate-800 hover:border-cyan-500/40 transition group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              <i data-lucide="layers" class="w-3.5 h-3.5"></i> TRACK A • MAIN AUDITORIUM
+            </span>
+            <span class="text-xs text-slate-500 font-mono">1:15 PM – 4:30 PM</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition">
+            Deep-Dive Systems Engineering
+          </h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Focused on the hardest infrastructure challenges when scaling agentic workloads into enterprise production environments:
+          </p>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 mt-1 shrink-0"></i>
+              <span><strong>MicroVM & Wasm Sandboxes:</strong> AI-DLC runtime isolation, AWS Firecracker execution, memory safety, and sub-millisecond cold starts.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 mt-1 shrink-0"></i>
+              <span><strong>Gateways & Vulnerability Defense:</strong> Indirect prompt injection guards, confused deputy mitigation, egress filtering, and token firewalls.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 mt-1 shrink-0"></i>
+              <span><strong>OpenTelemetry Tracing & Audit Trees:</strong> Non-deterministic span propagation and cryptographically signed Evidence Artifacts.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 mt-1 shrink-0"></i>
+              <span><strong>Trajectory & Causality Metrics:</strong> Decision-tree efficiency, cyclic loop detection, and drift analysis vs. model hallucination.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Track B Card -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-900/40 border border-slate-800 hover:border-emerald-500/40 transition group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <i data-lucide="terminal" class="w-3.5 h-3.5"></i> TRACK B • HANDS-ON LAB
+            </span>
+            <span class="text-xs text-slate-500 font-mono">1:15 PM – 4:30 PM</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-emerald-300 transition">
+            Practical Implementation & Protocols
+          </h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Facilitated, code-first workshops where engineers build, harden, and inter-operate production-grade agents in real-time:
+          </p>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+              <span><strong>Production MCP Server Construction:</strong> Exposing databases & ticket systems, Server-Sent Events (SSE), and Streamable HTTP auth.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+              <span><strong>Hardening MCP against Tool Poisoning:</strong> Defending against rug-pull attacks, hijacked schemas, and enforced gateway policies.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+              <span><strong>Agent Cards & A2A Discovery:</strong> Publishing <code class="text-emerald-400 font-mono text-xs bg-emerald-950/60 px-1 py-0.5 rounded">/.well-known/agent.json</code> and orchestrating async state lifecycles.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
+              <span><strong>End-to-End Orchestrator Pipeline:</strong> Wiring orchestrators to remote A2A peers backed by private MCP servers using unified trace IDs.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Full-Day Run-of-Show Schedule -->
+  <section id="schedule" class="py-16 border-t border-slate-800/80 bg-slate-950/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+        <div>
+          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Section 2</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Full-Day Run-of-Show Schedule</h2>
+        </div>
+        <div class="text-xs font-mono text-slate-400 mt-2 md:mt-0 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Time Zone: Central Time (CT) • Strict Stage Timers Enforced</span>
+        </div>
+      </div>
+
+      <!-- Schedule Filter & Search Bar -->
+      <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-1.5 w-full sm:w-auto" id="schedule-tabs">
+          <button data-filter="all" class="filter-tab active px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500 text-slate-950 transition">
+            All Sessions
+          </button>
+          <button data-filter="plenary" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">
+            Keynotes & Plenary
+          </button>
+          <button data-filter="track-a" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">
+            Track A (Auditorium)
+          </button>
+          <button data-filter="track-b" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">
+            Track B (Hands-On Lab)
+          </button>
+        </div>
+
+        <!-- Search Input -->
+        <div class="relative w-full sm:w-72">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+          <input type="text" id="schedule-search" placeholder="Search sessions, topics, tools..." class="w-full pl-9 pr-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/60 transition" />
+        </div>
+      </div>
+
+      <!-- Timeline Schedule Items -->
+      <div class="space-y-4" id="schedule-list">
+
+        <!-- 08:00 - 09:00 Registration -->
+        <div class="schedule-item plenary p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition" data-tags="registration badge coffee onboarding foyer">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2.5">
+              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/40">08:00 – 09:00</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">
+                <i data-lucide="map-pin" class="w-3 h-3 text-amber-400"></i> Main Foyer
+              </span>
+            </div>
+            <span class="text-xs font-mono text-slate-400">General Operations</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Doors Open & Registration</h3>
+          <p class="text-sm text-slate-300 mt-1">Badge pickup, coffee, Wi-Fi onboarding, and A/V soundchecks across all stages.</p>
+        </div>
+
+        <!-- 09:00 - 09:45 Keynote 1 -->
+        <div class="schedule-item plenary p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition" data-tags="keynote production shift prompt wrappers autonomous multi-agent stateful">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2.5">
+              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/40">09:00 – 09:45</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-purple-950/50 text-purple-300 border border-purple-800/40">
+                <i data-lucide="sparkles" class="w-3 h-3 text-purple-400"></i> Keynote 1 • Main Auditorium
+              </span>
+            </div>
+            <span class="text-xs font-mono text-slate-400">Plenary Session</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">The Production Shift</h3>
+          <p class="text-sm text-slate-300 mt-1"><strong class="text-white">Moving from Single-Prompt Wrappers to Autonomous Multi-Agent Systems.</strong> Transitioning to resilient, stateful agent networks, deterministic checkpoints, and production uptime engineering.</p>
+        </div>
+
+        <!-- 09:45 - 10:30 Keynote 2 -->
+        <div class="schedule-item plenary p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition" data-tags="keynote internet of agents protocols cross-organizational decentralized negotiation">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2.5">
+              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/40">09:45 – 10:30</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-purple-950/50 text-purple-300 border border-purple-800/40">
+                <i data-lucide="sparkles" class="w-3 h-3 text-purple-400"></i> Keynote 2 • Main Auditorium
+              </span>
+            </div>
+            <span class="text-xs font-mono text-slate-400">Plenary Session</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">The Internet of Agents</h3>
+          <p class="text-sm text-slate-300 mt-1"><strong class="text-white">Cross-Organizational Communication & Protocols.</strong> Open standards, decentralized ecosystems, dynamic capability registries, and cross-boundary negotiation.</p>
+        </div>
+
+        <!-- 10:30 - 10:45 Morning Break -->
+        <div class="schedule-item plenary p-4 rounded-xl bg-slate-950/70 border border-slate-800/60 text-slate-400 text-xs flex items-center justify-between" data-tags="break coffee snacks networking foyer">
+          <span class="font-mono font-bold text-slate-300">10:30 – 10:45</span>
+          <span class="font-medium text-slate-300 flex items-center gap-2">
+            <i data-lucide="coffee" class="w-4 h-4 text-amber-400"></i> Morning Break (Coffee Refresh & Speaker Mic Swaps)
+          </span>
+          <span class="font-mono">Foyer & Exhibit Area</span>
+        </div>
+
+        <!-- 10:45 - 11:30 Architecture Patterns -->
+        <div class="schedule-item plenary p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition" data-tags="architecture orchestration choreography state management hitl durable execution">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2.5">
+              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/40">10:45 – 11:30</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-blue-950/50 text-blue-300 border border-blue-800/40">
+                <i data-lucide="compass" class="w-3 h-3 text-blue-400"></i> Main Auditorium
+              </span>
+            </div>
+            <span class="text-xs font-mono text-slate-400">Technical Foundation</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Architecture Patterns & Workflows</h3>
+          <p class="text-sm text-slate-300 mt-1">Orchestration vs. choreography, state management, human-in-the-loop (HITL) checkpoints, retry storms, and durable multi-day execution engines.</p>
+        </div>
+
+        <!-- 11:30 - 12:15 Agent Discovery, Identity & Trust -->
+        <div class="schedule-item plenary p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition" data-tags="discovery identity trust spiffe spire oauth cryptographic attestation capability registries">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2.5">
+              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/40">11:30 – 12:15</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-blue-950/50 text-blue-300 border border-blue-800/40">
+                <i data-lucide="shield" class="w-3 h-3 text-indigo-400"></i> Main Auditorium
+              </span>
+            </div>
+            <span class="text-xs font-mono text-slate-400">Security & Trust</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Agent Discovery, Identity & Trust</h3>
+          <p class="text-sm text-slate-300 mt-1">Cryptographic agent identities, capability registries, SPIFFE/SPIRE attestation, and verifying third-party agents prior to context handoff.</p>
+        </div>
+
+        <!-- 12:15 - 01:15 Networking Lunch -->
+        <div class="schedule-item plenary p-4 rounded-xl bg-slate-950/70 border border-slate-800/60 text-slate-400 text-xs flex items-center justify-between" data-tags="lunch food dining networking buffet">
+          <span class="font-mono font-bold text-slate-300">12:15 – 01:15</span>
+          <span class="font-medium text-slate-300 flex items-center gap-2">
+            <i data-lucide="utensils" class="w-4 h-4 text-emerald-400"></i> Networking Lunch (Catered Buffet & Dietary Accommodations)
+          </span>
+          <span class="font-mono">Dining Hall</span>
+        </div>
+
+        <!-- Afternoon Split Header -->
+        <div class="p-3 rounded-lg bg-gradient-to-r from-cyan-950/40 via-purple-950/40 to-emerald-950/40 border border-slate-800 text-xs font-mono text-center text-slate-300">
+          ⚡ AFTERNOON PARALLEL TRACKS COMMENCE: TRACK A (MAIN AUDITORIUM) & TRACK B (HANDS-ON LAB)
+        </div>
+
+        <!-- 01:15 - 02:00 Split Sessions -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- Track A -->
+          <div class="schedule-item track-a p-5 rounded-2xl bg-slate-900/80 border border-cyan-900/50 hover:border-cyan-500/50 transition" data-tags="sandboxing runtimes microvms wasm firecracker isolation track-a auditorium">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">01:15 – 02:00</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">TRACK A • AUDITORIUM</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Sandboxing & Runtimes</h4>
+            <p class="text-xs text-slate-300 mt-1"><strong>MicroVMs, Wasm & AI-DLC Isolation.</strong> Memory safety, cold-start mitigation, and hypervisor-level isolation for untrusted code execution.</p>
+          </div>
+
+          <!-- Track B -->
+          <div class="schedule-item track-b p-5 rounded-2xl bg-slate-900/80 border border-emerald-900/50 hover:border-emerald-500/50 transition" data-tags="lab 1 mcp model context protocol servers tools auth sse track-b lab">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">01:15 – 02:00</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">TRACK B • HANDS-ON LAB</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Lab 1: Production MCP Servers</h4>
+            <p class="text-xs text-slate-300 mt-1"><strong>Tool Definitions & Auth.</strong> Exposing enterprise resources via standard MCP interfaces, transport security (SSE/Streamable HTTP), and scoped OAuth.</p>
+          </div>
+        </div>
+
+        <!-- 02:00 - 02:45 Split Sessions -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- Track A -->
+          <div class="schedule-item track-a p-5 rounded-2xl bg-slate-900/80 border border-cyan-900/50 hover:border-cyan-500/50 transition" data-tags="gateways vulnerabilities prompt injection egress filtering pii redaction track-a auditorium">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">02:00 – 02:45</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">TRACK A • AUDITORIUM</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Gateways & Vulnerabilities</h4>
+            <p class="text-xs text-slate-300 mt-1"><strong>Prompt Injection & Egress Filtering.</strong> Defense-in-depth against indirect injection, confused deputy scenarios, and real-time PII redaction.</p>
+          </div>
+
+          <!-- Track B -->
+          <div class="schedule-item track-b p-5 rounded-2xl bg-slate-900/80 border border-emerald-900/50 hover:border-emerald-500/50 transition" data-tags="lab 1 continued hardening mcp tool poisoning rug pull schema track-b lab">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">02:00 – 02:45</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">TRACK B • HANDS-ON LAB</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Lab 1 Continued: Hardening MCP</h4>
+            <p class="text-xs text-slate-300 mt-1"><strong>Mitigating Tool Poisoning.</strong> Defending against rug-pull attacks, schema manipulation, and enforcing gateway security policies programmatically.</p>
+          </div>
+        </div>
+
+        <!-- 02:45 - 03:00 Afternoon Break -->
+        <div class="schedule-item plenary p-4 rounded-xl bg-slate-950/70 border border-slate-800/60 text-slate-400 text-xs flex items-center justify-between" data-tags="break afternoon coffee refresh lab connectivity checks">
+          <span class="font-mono font-bold text-slate-300">02:45 – 03:00</span>
+          <span class="font-medium text-slate-300 flex items-center gap-2">
+            <i data-lucide="coffee" class="w-4 h-4 text-amber-400"></i> Afternoon Break (Refreshments & Lab 2 Connectivity Checks)
+          </span>
+          <span class="font-mono">Foyer & Lab Room</span>
+        </div>
+
+        <!-- 03:00 - 03:45 Split Sessions -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- Track A -->
+          <div class="schedule-item track-a p-5 rounded-2xl bg-slate-900/80 border border-cyan-900/50 hover:border-cyan-500/50 transition" data-tags="observability tracing opentelemetry otel evidence artifacts audit logs track-a auditorium">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">03:00 – 03:45</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">TRACK A • AUDITORIUM</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Observability & Tracing</h4>
+            <p class="text-xs text-slate-300 mt-1"><strong>OpenTelemetry & Evidence Artifacts.</strong> Mapping non-deterministic execution paths into structured trace trees and verifiable audit logs.</p>
+          </div>
+
+          <!-- Track B -->
+          <div class="schedule-item track-b p-5 rounded-2xl bg-slate-900/80 border border-emerald-900/50 hover:border-emerald-500/50 transition" data-tags="lab 2 a2a multi-agent interop agent cards task lifecycles track-b lab">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">03:00 – 03:45</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">TRACK B • HANDS-ON LAB</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Lab 2: Multi-Agent A2A Interop</h4>
+            <p class="text-xs text-slate-300 mt-1"><strong>Agent Cards & Task Lifecycles.</strong> Publishing <code>/.well-known/agent.json</code>, handling asynchronous task state changes, and negotiating capabilities.</p>
+          </div>
+        </div>
+
+        <!-- 03:45 - 04:30 Split Sessions -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- Track A -->
+          <div class="schedule-item track-a p-5 rounded-2xl bg-slate-900/80 border border-cyan-900/50 hover:border-cyan-500/50 transition" data-tags="trajectory causality path grading drift analysis cyclic loops track-a auditorium">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">03:45 – 04:30</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">TRACK A • AUDITORIUM</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Trajectory & Causality</h4>
+            <p class="text-xs text-slate-300 mt-1"><strong>Path Grading & Drift Analysis.</strong> Assessing decision-tree efficiency, detecting cyclic loops, and evaluating context-causality metrics.</p>
+          </div>
+
+          <!-- Track B -->
+          <div class="schedule-item track-b p-5 rounded-2xl bg-slate-900/80 border border-emerald-900/50 hover:border-emerald-500/50 transition" data-tags="lab 2 continued pipeline orchestrator remote a2a peers private mcp trace ids track-b lab">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">03:45 – 04:30</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">TRACK B • HANDS-ON LAB</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Lab 2 Continued: End-to-End Workflow</h4>
+            <p class="text-xs text-slate-300 mt-1"><strong>Full Pipeline Integration.</strong> Connecting an orchestrator agent to remote A2A peers backed by private MCP servers using distributed trace IDs.</p>
+          </div>
+        </div>
+
+        <!-- 04:30 - 05:00 Closing Remarks & Happy Hour -->
+        <div class="schedule-item plenary p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950/40 to-slate-900 border border-slate-800 hover:border-cyan-500/40 transition" data-tags="closing remarks happy hour networking plenary foyer auditorium">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2.5">
+              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/40">04:30 – 05:00</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-purple-950/50 text-purple-300 border border-purple-800/40">
+                <i data-lucide="glass-water" class="w-3 h-3 text-purple-400"></i> Main Auditorium & Foyer
+              </span>
+            </div>
+            <span class="text-xs font-mono text-slate-400">Community Wrap-Up</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Closing Remarks & Happy Hour</h3>
+          <p class="text-sm text-slate-300 mt-1">Both tracks reconvene for final key takeaways, feedback collection, community announcements, and informal networking.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Technical Session Scope & Speaker Briefing -->
+  <section id="sessions" class="py-16 border-t border-slate-800/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Section 3</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Technical Session Scope & Speaker Guide</h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-xl mt-3 md:mt-0">
+          Speakers and session leads must align their content with rigorous production depth, actionable code, and concrete architectural trade-offs.
+        </p>
+      </div>
+
+      <!-- Scope Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <!-- Card 1 -->
+        <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-3 font-mono text-xs font-bold">
+              01
+            </div>
+            <h3 class="text-base font-bold text-white mb-2">Architecture Patterns & Workflows</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              <strong>Scope:</strong> Deterministic state machines vs. dynamic loops. Handling retry storms, infinite loops, and persistence models for multi-day runs.
+            </p>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-[11px] text-slate-300">
+            <span class="text-cyan-400 font-bold block mb-1">Speaker Directive:</span>
+            Avoid abstract conceptual diagrams. Demonstrate concrete state recovery and HITL pause/resume logic using durable execution engines.
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-3 font-mono text-xs font-bold">
+              02
+            </div>
+            <h3 class="text-base font-bold text-white mb-2">Internet of Agents & Discovery</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              <strong>Scope:</strong> Cross-organizational agent-to-agent negotiation protocols, dynamic catalogs, zero-trust perimeters, and capability matching.
+            </p>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-[11px] text-slate-300">
+            <span class="text-indigo-400 font-bold block mb-1">Speaker Directive:</span>
+            Address practical cross-domain boundaries, untrusted metadata payloads, and latency costs of remote agent discovery.
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-3 font-mono text-xs font-bold">
+              03
+            </div>
+            <h3 class="text-base font-bold text-white mb-2">Identity & Trust (SPIFFE/SPIRE)</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              <strong>Scope:</strong> User-delegated OAuth vs. machine-to-machine identities, cryptographic attestation, SPIFFE/SPIRE, and ephemeral credentials.
+            </p>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-[11px] text-slate-300">
+            <span class="text-blue-400 font-bold block mb-1">Speaker Directive:</span>
+            Highlight failure modes where agents escalate privileges via shared or over-permissioned service account keys.
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-3 font-mono text-xs font-bold">
+              04
+            </div>
+            <h3 class="text-base font-bold text-white mb-2">Sandboxing & AI-DLC Runtimes</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              <strong>Scope:</strong> Docker containers vs. MicroVMs (AWS Firecracker) vs. Wasm isolation for executing untrusted agent code safely.
+            </p>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-[11px] text-slate-300">
+            <span class="text-emerald-400 font-bold block mb-1">Speaker Directive:</span>
+            Benchmark startup latency, memory overhead, and file system isolation during runtime tool generation.
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-3 font-mono text-xs font-bold">
+              05
+            </div>
+            <h3 class="text-base font-bold text-white mb-2">Gateways & Semantic Guardrails</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              <strong>Scope:</strong> Centralized proxy layers, token budget management, dynamic PII masking, and semantic policy checks prior to outbound calls.
+            </p>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-[11px] text-slate-300">
+            <span class="text-amber-400 font-bold block mb-1">Speaker Directive:</span>
+            Focus on real-time latency overhead introduced by guardrail proxies and async policy evaluation patterns.
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mb-3 font-mono text-xs font-bold">
+              06
+            </div>
+            <h3 class="text-base font-bold text-white mb-2">Agentic Vulnerability Analysis</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              <strong>Scope:</strong> Threat modeling indirect prompt injection in RAG, confused deputy exploits, tool-poisoning, and lateral movement.
+            </p>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-[11px] text-slate-300">
+            <span class="text-rose-400 font-bold block mb-1">Speaker Directive:</span>
+            Walk through real-world attack trees and demonstrate concrete mitigation at application and gateway layers.
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-3 font-mono text-xs font-bold">
+              07
+            </div>
+            <h3 class="text-base font-bold text-white mb-2">Observability & Evidence Artifacts</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              <strong>Scope:</strong> Mapping OpenTelemetry (OTel) across async decision trees. Generating cryptographically signed Evidence Artifacts for compliance.
+            </p>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-[11px] text-slate-300">
+            <span class="text-purple-400 font-bold block mb-1">Speaker Directive:</span>
+            Provide concrete JSON schema structures for span context propagation across heterogeneous agent frameworks.
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mb-3 font-mono text-xs font-bold">
+              08
+            </div>
+            <h3 class="text-base font-bold text-white mb-2">Trajectory & Causality Evaluation</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+              <strong>Scope:</strong> Evaluating non-deterministic agent runs: path optimality, redundant tool calls, trajectory drift, and context causality checks.
+            </p>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-[11px] text-slate-300">
+            <span class="text-teal-400 font-bold block mb-1">Speaker Directive:</span>
+            Contrast classical offline evaluation pipelines with continuous production trajectory monitoring.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Hands-On Workshop Facilitator Guide (MCP & A2A) -->
+  <section id="workshops" class="py-16 border-t border-slate-800/80 bg-slate-950/50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-emerald-400">Section 4</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Hands-On Workshop Guide (MCP & A2A)</h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-xl mt-3 md:mt-0">
+          The afternoon hands-on track provides a seamless, zero-friction engineering environment with strict infrastructure directives.
+        </p>
+      </div>
+
+      <!-- Zero-Setup Policy Highlight Callout -->
+      <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-950/60 via-slate-900 to-slate-900 border border-emerald-500/40 mb-10 shadow-lg shadow-emerald-950/20">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div class="space-y-2">
+            <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-emerald-400 bg-emerald-950 px-2.5 py-1 rounded border border-emerald-800">
+              <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i> MANDATORY DIRECTIVE: ZERO-SETUP INFRASTRUCTURE RULE
+            </div>
+            <h3 class="text-xl font-extrabold text-white">Local dependency installs are strictly prohibited.</h3>
+            <p class="text-slate-300 text-sm max-w-3xl leading-relaxed">
+              To eliminate technical delays, configuration divergence, and local environment troubleshooting, all participants are provisioned instant cloud environments via GitHub Codespaces & pre-built devcontainers.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row lg:flex-col gap-2.5 shrink-0">
+            <div class="px-4 py-2.5 rounded-xl bg-slate-950/90 border border-slate-800 text-xs font-mono text-slate-300 flex items-center gap-2">
+              <i data-lucide="qr-code" class="w-4 h-4 text-emerald-400"></i>
+              <span>Single Shortlink & QR at Lab Entrance</span>
+            </div>
+            <div class="px-4 py-2.5 rounded-xl bg-slate-950/90 border border-slate-800 text-xs font-mono text-slate-300 flex items-center gap-2">
+              <i data-lucide="hard-drive" class="w-4 h-4 text-amber-400"></i>
+              <span>Offline USB & Network Mirror Standby</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab Modules Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- Lab 1: MCP -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              LAB 1 (01:15 – 02:45)
+            </span>
+            <span class="text-xs font-mono text-slate-400">Model Context Protocol</span>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-2">Production MCP Servers & Hardening</h3>
+          <p class="text-sm text-slate-300 mb-6">
+            Constructing enterprise-ready MCP endpoints and defending against tool poisoning and rogue parameter injection.
+          </p>
+
+          <!-- Modules -->
+          <div class="space-y-3 mb-6">
+            <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80">
+              <div class="text-xs font-mono text-cyan-400 font-bold mb-1">Module 1: Structured Resources & Tools</div>
+              <p class="text-xs text-slate-300">Expose databases and internal ticketing endpoints via standardized MCP JSON-RPC tool declarations.</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80">
+              <div class="text-xs font-mono text-cyan-400 font-bold mb-1">Module 2: Transport Security & OAuth</div>
+              <p class="text-xs text-slate-300">Secure transport via Server-Sent Events (SSE) and Streamable HTTP with scoped OAuth tokens.</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80">
+              <div class="text-xs font-mono text-cyan-400 font-bold mb-1">Module 3: Defending Against Tool Poisoning</div>
+              <p class="text-xs text-slate-300">Implement defensive schema validation to guard against rug-pull attacks designed to hijack model tool selection logic.</p>
+            </div>
+          </div>
+
+          <!-- Code Snippet Box -->
+          <div class="rounded-xl bg-slate-950 border border-slate-800 overflow-hidden text-xs font-mono">
+            <div class="px-3.5 py-2 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+              <span class="text-slate-400">mcp-server-config.json</span>
+              <button onclick="copySnippet('mcp-snippet')" class="text-slate-400 hover:text-white transition flex items-center gap-1">
+                <i data-lucide="copy" class="w-3 h-3"></i> Copy
+              </button>
+            </div>
+            <pre id="mcp-snippet" class="p-4 text-slate-300 overflow-x-auto"><code>{
+  "name": "enterprise-tickets-mcp",
+  "version": "1.0.0",
+  "transport": "sse",
+  "auth": {
+    "type": "oauth2_bearer",
+    "scopes": ["tickets:read", "tickets:write"]
+  },
+  "guardrails": {
+    "sanitize_tool_descriptions": true,
+    "max_payload_bytes": 1048576
+  }
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- Lab 2: A2A -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              LAB 2 (03:00 – 04:30)
+            </span>
+            <span class="text-xs font-mono text-slate-400">Agent-to-Agent Protocols</span>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-2">Multi-Agent A2A Interoperability</h3>
+          <p class="text-sm text-slate-300 mb-6">
+            Implementing cross-agent communication protocols, asynchronous task states, and federated peer delegation.
+          </p>
+
+          <!-- Modules -->
+          <div class="space-y-3 mb-6">
+            <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80">
+              <div class="text-xs font-mono text-emerald-400 font-bold mb-1">Module 1: Standard Agent Cards</div>
+              <p class="text-xs text-slate-300">Publish and parse standard capability contracts at <code class="text-emerald-400">/.well-known/agent.json</code>.</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80">
+              <div class="text-xs font-mono text-emerald-400 font-bold mb-1">Module 2: Async Task Lifecycle States</div>
+              <p class="text-xs text-slate-300">State machines for <code class="text-emerald-400">submitted</code>, <code class="text-emerald-400">working</code>, <code class="text-emerald-400">input-required</code>, <code class="text-emerald-400">completed</code>, and <code class="text-emerald-400">failed</code>.</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80">
+              <div class="text-xs font-mono text-emerald-400 font-bold mb-1">Module 3: Attestation & End-to-End Orchestration</div>
+              <p class="text-xs text-slate-300">Enforce cryptographic verification before wiring orchestrator agents to remote A2A peers backed by MCP servers.</p>
+            </div>
+          </div>
+
+          <!-- Code Snippet Box -->
+          <div class="rounded-xl bg-slate-950 border border-slate-800 overflow-hidden text-xs font-mono">
+            <div class="px-3.5 py-2 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+              <span class="text-slate-400">/.well-known/agent.json</span>
+              <button onclick="copySnippet('a2a-snippet')" class="text-slate-400 hover:text-white transition flex items-center gap-1">
+                <i data-lucide="copy" class="w-3 h-3"></i> Copy
+              </button>
+            </div>
+            <pre id="a2a-snippet" class="p-4 text-slate-300 overflow-x-auto"><code>{
+  "agent_id": "aaif.dallas.billing-agent-01",
+  "name": "Enterprise Billing Agent",
+  "protocol_version": "a2a/v1.0",
+  "capabilities": ["invoice.generate", "ledger.reconcile"],
+  "attestation": {
+    "spiffe_id": "spiffe://aaif.internal/agent/billing",
+    "public_key": "ecdsa-sha2-nistp256 AAAAE2V..."
+  }
+}</code></pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Day-Of Risk Mitigation & Operations Playbook -->
+  <section id="playbook" class="py-16 border-t border-slate-800/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-amber-400">Section 5</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Operations Playbook & Staffing Structure</h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-xl mt-3 md:mt-0">
+          Strict operational guardrails to guarantee schedule integrity, failover readiness, and seamless attendee experience.
+        </p>
+      </div>
+
+      <!-- Playbook Rules Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+        <!-- 15-Second Failover Rule -->
+        <div class="p-6 sm:p-7 rounded-2xl bg-slate-900/80 border border-amber-500/30 hover:border-amber-500/60 transition">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+              <i data-lucide="timer" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-amber-400 font-bold uppercase">Critical Directive</span>
+              <h3 class="text-lg font-bold text-white">Live API Latency & 15-Second Failover</h3>
+            </div>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed mb-4">
+            Live multi-agent demonstrations carry inherent risk of LLM rate limits, latency spikes, or cloud downtime.
+          </p>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 font-bold">•</span>
+              <span><strong>Confidence Countdown:</strong> Presenters demonstrating live execution must maintain an active countdown timer on their confidence monitor.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 font-bold">•</span>
+              <span><strong>The 15-Second Cut:</strong> If a live loop stalls or errors for &gt;15 seconds, the Stage Manager immediately toggles display to pre-recorded backup video.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 font-bold">•</span>
+              <span><strong>24-Hour Pre-Flight:</strong> All presenters must submit high-res screen recordings of successful execution 24 hours prior to event start.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Q&A Mic Protocol -->
+        <div class="p-6 sm:p-7 rounded-2xl bg-slate-900/80 border border-cyan-500/30 hover:border-cyan-500/60 transition">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+              <i data-lucide="mic" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-cyan-400 font-bold uppercase">Audience Management</span>
+              <h3 class="text-lg font-bold text-white">Q&A Pacing & Microphone Protocol</h3>
+            </div>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed mb-4">
+            Uncontrolled microphone handling causes session overrun and delays. Physical microphone custody is strictly maintained.
+          </p>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-400 font-bold">•</span>
+              <span><strong>Never Hand Over the Mic:</strong> Dedicated mic runners hold the wireless handheld microphone while the attendee speaks, reclaiming it instantly.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-400 font-bold">•</span>
+              <span><strong>Visual Stage Cue Cards:</strong> Stage Manager issues strict visual cues (<code class="text-cyan-400 bg-cyan-950 px-1 rounded">10m</code>, <code class="text-amber-400 bg-amber-950 px-1 rounded">5m</code>, <code class="text-rose-400 bg-rose-950 px-1 rounded">STOP</code>) to enforce time limits.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-400 font-bold">•</span>
+              <span><strong>Hallway Track Handoff:</strong> Overflow questions are systematically deferred to the Dining Hall / Foyer networking sessions.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Staffing & Volunteer Allocations Hierarchy -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/60 border border-slate-800">
+        <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+          <i data-lucide="users" class="w-5 h-5 text-indigo-400"></i>
+          Volunteer & Staffing Allocations
+        </h3>
+        <p class="text-sm text-slate-400 mb-8">
+          Hierarchical operational structure coordinating registration, main stage, hands-on workshop labs, and audio/video streaming.
+        </p>
+
+        <!-- Visual Org Chart Cards -->
+        <div class="flex flex-col items-center">
+          <!-- Top Leader -->
+          <div class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm shadow-xl shadow-indigo-600/20 border border-indigo-400/40 text-center mb-6">
+            <span class="text-[10px] uppercase font-mono tracking-widest text-blue-200 block">Command & Control</span>
+            Event Lead Manager (1 Lead)
+          </div>
+
+          <!-- Connecting Line -->
+          <div class="w-px h-6 bg-slate-700 -mt-6 mb-6"></div>
+
+          <!-- Staffing Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
+              <div class="text-xs font-mono font-bold text-cyan-400 mb-1">Registration Leads</div>
+              <div class="text-base font-bold text-white">2 – 3 Staff</div>
+              <p class="text-xs text-slate-400 mt-1">Badge distribution, check-in, credential verification & Wi-Fi onboarding.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
+              <div class="text-xs font-mono font-bold text-purple-400 mb-1">Stage & Speakers</div>
+              <div class="text-base font-bold text-white">2 – 4 Staff</div>
+              <p class="text-xs text-slate-400 mt-1">Stage Manager (1), Speaker Wrangler (1), Q&A Mic Runners (2) with cue cards.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
+              <div class="text-xs font-mono font-bold text-emerald-400 mb-1">Technical TA Team</div>
+              <div class="text-base font-bold text-white">3 – 4 Staff</div>
+              <p class="text-xs text-slate-400 mt-1">Maintained at strict 1:25 TA-to-attendee ratio in hands-on lab track.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-center">
+              <div class="text-xs font-mono font-bold text-amber-400 mb-1">Stream, AV & Float</div>
+              <div class="text-base font-bold text-white">1 – 2 Staff</div>
+              <p class="text-xs text-slate-400 mt-1">Catering replenishment, room overflow management, and livestream stability.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Community & Footer Section -->
+  <footer class="py-14 border-t border-slate-800/80 bg-[#05070d]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="h-10 px-2 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center">
+            <img src="assets/AAIF_Primary_Logo_White.svg" alt="AAIF Logo" class="h-7 w-auto object-contain" />
+          </div>
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 block font-semibold">AAIF Dallas Community</span>
+            <span class="text-sm font-bold text-white">Agentic AI Day — Production Readiness</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400">
+          <a href="#overview" class="hover:text-white transition">Overview</a>
+          <span class="text-slate-700">•</span>
+          <a href="#schedule" class="hover:text-white transition">Schedule</a>
+          <span class="text-slate-700">•</span>
+          <a href="#sessions" class="hover:text-white transition">Technical Sessions</a>
+          <span class="text-slate-700">•</span>
+          <a href="#workshops" class="hover:text-white transition">Hands-On Labs</a>
+          <span class="text-slate-700">•</span>
+          <a href="#playbook" class="hover:text-white transition">Operations</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© AAIF Dallas Chapter. Artifacts, materials, and related resources for the local AI engineering community.</p>
+        <p class="font-mono">Hosted on GitHub Pages • Generated for AAIF Community</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Icons and Interactivity -->
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
+
