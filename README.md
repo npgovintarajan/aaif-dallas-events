@@ -67,5 +67,5 @@ When deployed to GitHub Pages, the site can be accessed at:
    - Live schedule search allowing attendees to filter sessions by speaker or topic.
    - Community Call for Speakers & Lightning Talk proposal submissions.
 6. **Ecosystem Partners & Sponsors (IEEE Metrocon & Chainday Format)**:
-   - Technical co-sponsorship with IEEE Dallas Section, AAIF Global, OpenAgentic WG, and Dallas AI Forum.
+   - Technical co-sponsorship and academic partnership with IEEE Dallas Section, AAIF Global, UTD AI Society, IEEE UTD Student Chapter, and IEEE SMU Student Chapter.
    - Tiered sponsorship showcase (Platinum, Gold, Silver/Reception) and prospectus inquiries.
