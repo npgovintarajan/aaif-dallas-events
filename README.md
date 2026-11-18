@@ -42,7 +42,7 @@ When deployed to GitHub Pages, the site can be accessed at:
 
 ---
 
-## 📋 Included Sections in Agentic AI Day (Jan 27)
+## 📋 Included Sections in Agentic AI Day (January 23, 2027)
 
 1. **Executive Overview & Objectives**: Bridging the gap between conceptual LLM wrappers and enterprise production-grade multi-agent clusters.
 2. **Interactive Run-of-Show Schedule**:
