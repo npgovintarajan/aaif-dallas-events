@@ -85,9 +85,9 @@
 
   <!-- Navigation Bar -->
   <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/95 border-b border-slate-200/90 shadow-sm transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4 lg:gap-8">
       <!-- Logo & Subtitle -->
-      <a href="#" class="flex items-center gap-3 group" aria-label="Agentic AI Day Home - AAIF Dallas Chapter">
+      <a href="#" class="flex items-center gap-3 group shrink-0" aria-label="Agentic AI Day Home - AAIF Dallas Chapter">
         <div
           class="h-10 px-2 py-1.5 rounded-lg bg-white border border-slate-200 flex items-center shadow-inner group-hover:border-[#FF702D]/50 transition">
           <img src="assets/AAIF_Primary_Logo_Black.svg" alt="Agentic AI Foundation (AAIF) Logo"
@@ -97,47 +97,70 @@
           <span class="text-xs uppercase tracking-widest font-bold text-[#C93B00]">Dallas Chapter</span>
           <span class="text-sm font-bold text-slate-950 tracking-tight flex items-center gap-1.5 font-extrabold">
             Agentic AI Day
-            <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true"></span>
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#FF702D] animate-pulse" aria-hidden="true"></span>
           </span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav aria-label="Main Navigation" class="hidden md:flex items-center gap-1 text-sm font-semibold text-slate-700">
-        <a href="#overview" class="px-3 py-1.5 rounded-lg hover:text-black hover:bg-slate-100 transition">Overview</a>
-        <a href="#schedule" class="px-3 py-1.5 rounded-lg hover:text-black hover:bg-slate-100 transition">Schedule</a>
-        <a href="#sessions" class="px-3 py-1.5 rounded-lg hover:text-black hover:bg-slate-100 transition">Technical
-          Sessions</a>
-        <a href="#workshops" class="px-3 py-1.5 rounded-lg hover:text-black hover:bg-slate-100 transition">Hands-On
-          Labs</a>
-        <a href="#speakers" class="px-3 py-1.5 rounded-lg hover:text-black hover:bg-slate-100 transition">Speakers</a>
-        <a href="#partners" class="px-3 py-1.5 rounded-lg hover:text-black hover:bg-slate-100 transition">Partners &
-          Sponsors</a>
+      <!-- Desktop Navigation Links with Balanced Spacing -->
+      <nav aria-label="Main Navigation" class="hidden lg:flex items-center gap-1.5 xl:gap-2 text-xs xl:text-sm font-semibold text-slate-700">
+        <a href="#overview" class="whitespace-nowrap px-3 py-2 rounded-lg hover:text-black hover:bg-slate-100 transition-colors">Overview</a>
+        <a href="#schedule" class="whitespace-nowrap px-3 py-2 rounded-lg hover:text-black hover:bg-slate-100 transition-colors">Schedule</a>
+        <a href="#sessions" class="whitespace-nowrap px-3 py-2 rounded-lg hover:text-black hover:bg-slate-100 transition-colors">Technical Sessions</a>
+        <a href="#workshops" class="whitespace-nowrap px-3 py-2 rounded-lg hover:text-black hover:bg-slate-100 transition-colors">Hands-On Labs</a>
+        <a href="#speakers" class="whitespace-nowrap px-3 py-2 rounded-lg hover:text-black hover:bg-slate-100 transition-colors">Speakers</a>
+        <a href="#partners" class="whitespace-nowrap px-3 py-2 rounded-lg hover:text-black hover:bg-slate-100 transition-colors">Partners & Sponsors</a>
       </nav>
 
       <!-- Action Buttons -->
-      <div class="flex items-center gap-2.5">
+      <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
         <!-- Accessibility & Print Tools -->
         <button id="toggle-contrast-btn" onclick="toggleHighContrast()"
           class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 font-medium transition"
           title="Toggle Enhanced High Contrast Mode" aria-label="Toggle Enhanced High Contrast Mode"
           aria-pressed="false">
           <i data-lucide="contrast" class="w-3.5 h-3.5 text-[#C93B00]" aria-hidden="true"></i>
-          <span class="hidden lg:inline">Contrast</span>
+          <span class="hidden sm:inline">Contrast</span>
         </button>
         <button onclick="window.print()"
-          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 font-medium transition"
+          class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 font-medium transition"
           title="Print or Save Run-of-Show Guide as PDF" aria-label="Print or Save Run-of-Show Guide as PDF">
           <i data-lucide="printer" class="w-3.5 h-3.5" aria-hidden="true"></i>
           <span>Print / PDF</span>
         </button>
         <a href="#schedule"
-          class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#FF702D] hover:bg-[#ff8548] text-black shadow-lg shadow-[#FF702D]/25 transition-all">
+          class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#FF702D] hover:bg-[#ff8548] text-black shadow-lg shadow-[#FF702D]/25 transition-all">
           <span>Run of Show</span>
           <i data-lucide="arrow-down-right" class="w-4 h-4" aria-hidden="true"></i>
         </a>
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobile-nav"
+          aria-label="Toggle Navigation Menu"
+          class="lg:hidden inline-flex items-center justify-center p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition">
+          <i data-lucide="menu" id="menu-icon-open" class="w-5 h-5" aria-hidden="true"></i>
+          <i data-lucide="x" id="menu-icon-close" class="w-5 h-5 hidden" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
+
+    <!-- Mobile Navigation Menu -->
+    <nav id="mobile-nav" aria-label="Mobile Navigation"
+      class="hidden lg:hidden border-t border-slate-200 bg-white/98 backdrop-blur-xl px-4 py-3 space-y-1 shadow-lg transition-all">
+      <a href="#overview" onclick="closeMobileMenu()"
+        class="block px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:text-black hover:bg-slate-100 transition">Overview</a>
+      <a href="#schedule" onclick="closeMobileMenu()"
+        class="block px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:text-black hover:bg-slate-100 transition">Schedule</a>
+      <a href="#sessions" onclick="closeMobileMenu()"
+        class="block px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:text-black hover:bg-slate-100 transition">Technical Sessions</a>
+      <a href="#workshops" onclick="closeMobileMenu()"
+        class="block px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:text-black hover:bg-slate-100 transition">Hands-On Labs</a>
+      <a href="#speakers" onclick="closeMobileMenu()"
+        class="block px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:text-black hover:bg-slate-100 transition">Speakers</a>
+      <a href="#partners" onclick="closeMobileMenu()"
+        class="block px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:text-black hover:bg-slate-100 transition">Partners & Sponsors</a>
+      <a href="sponsor-flyer.html" target="_blank" rel="noopener noreferrer"
+        class="block px-3.5 py-2.5 rounded-lg text-sm font-bold text-[#C93B00] hover:bg-orange-50 transition">Sponsor Prospectus Flyer ↗</a>
+    </nav>
   </header>
 
   <!-- Main Content Landmark (WCAG 1.3.1, 2.4.1) -->

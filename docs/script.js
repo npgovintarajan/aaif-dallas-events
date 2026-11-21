@@ -176,6 +176,32 @@ function toggleHighContrast() {
   }
 }
 
+// Responsive Mobile Navigation Drawer
+function toggleMobileMenu() {
+  const nav = document.getElementById('mobile-nav');
+  const btn = document.getElementById('mobile-menu-btn');
+  const openIcon = document.getElementById('menu-icon-open');
+  const closeIcon = document.getElementById('menu-icon-close');
+  if (!nav) return;
+  const isHidden = nav.classList.toggle('hidden');
+  const isOpen = !isHidden;
+  if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  if (openIcon) openIcon.classList.toggle('hidden', isOpen);
+  if (closeIcon) closeIcon.classList.toggle('hidden', !isOpen);
+  if (window.lucide) lucide.createIcons();
+}
+
+function closeMobileMenu() {
+  const nav = document.getElementById('mobile-nav');
+  const btn = document.getElementById('mobile-menu-btn');
+  const openIcon = document.getElementById('menu-icon-open');
+  const closeIcon = document.getElementById('menu-icon-close');
+  if (nav) nav.classList.add('hidden');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
+  if (openIcon) openIcon.classList.remove('hidden');
+  if (closeIcon) closeIcon.classList.add('hidden');
+}
+
 // Accessible copy snippet helper with screen reader announcement
 function copySnippet(elementId) {
   const el = document.getElementById(elementId);

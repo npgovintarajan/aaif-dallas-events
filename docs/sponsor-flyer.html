@@ -110,31 +110,31 @@
 
   <!-- Top Action Bar (Screen Only) -->
   <nav aria-label="Page tools"
-    class="no-print max-w-4xl mx-auto mb-6 flex items-center justify-between bg-white/95 border border-slate-200 p-4 rounded-2xl shadow-sm backdrop-blur-md sticky top-4 z-50">
-    <div class="flex items-center gap-3">
+    class="no-print max-w-4xl mx-auto mb-6 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 bg-white/95 border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-sm backdrop-blur-md sticky top-4 z-50">
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
       <a href="index.html"
-        class="text-xs font-mono text-[#FF702D] hover:text-[#ff8548] font-bold flex items-center gap-1 transition focus-visible:ring-2 focus-visible:ring-[#FF702D] rounded-md p-1">
+        class="text-xs font-mono text-[#C93B00] hover:text-[#e85b1a] font-bold flex items-center gap-1.5 transition focus-visible:ring-2 focus-visible:ring-[#FF702D] rounded-lg px-2.5 py-1.5 bg-orange-50 border border-orange-200">
         <i data-lucide="arrow-left" class="w-4 h-4" aria-hidden="true"></i>
-        <span>Back to Event Portal</span>
+        <span>Event Portal</span>
       </a>
-      <span class="text-slate-700" aria-hidden="true">|</span>
-      <span class="text-xs text-slate-600 font-mono">Sponsorship Flyer • Jan 23, 2027</span>
+      <span class="text-slate-300 hidden sm:inline" aria-hidden="true">|</span>
+      <span class="text-xs text-slate-600 font-mono hidden sm:inline">Sponsorship Flyer • Jan 23, 2027</span>
     </div>
-    <div class="flex items-center gap-2.5">
+    <div class="flex items-center gap-2 sm:gap-2.5 flex-wrap">
       <button onclick="document.documentElement.classList.toggle('high-contrast')" aria-label="Toggle High Contrast Display"
-        class="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition focus-visible:ring-2 focus-visible:ring-[#C93B00]">
-        <i data-lucide="contrast" class="w-4 h-4 text-[#FF702D]" aria-hidden="true"></i>
-        <span class="hidden sm:inline">High Contrast</span>
+        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition focus-visible:ring-2 focus-visible:ring-[#C93B00]">
+        <i data-lucide="contrast" class="w-3.5 h-3.5 text-[#C93B00]" aria-hidden="true"></i>
+        <span class="hidden sm:inline">Contrast</span>
       </button>
       <button onclick="window.print()" aria-label="Print or Save Sponsorship Flyer as PDF"
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-[#FF702D] hover:bg-[#ff8548] text-black shadow-lg shadow-[#FF702D]/25 transition focus-visible:ring-2 focus-visible:ring-white">
-        <i data-lucide="printer" class="w-4 h-4" aria-hidden="true"></i>
-        <span>Print / Save as PDF Flyer</span>
+        class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#FF702D] hover:bg-[#ff8548] text-black shadow-lg shadow-[#FF702D]/25 transition focus-visible:ring-2 focus-visible:ring-white">
+        <i data-lucide="printer" class="w-3.5 h-3.5" aria-hidden="true"></i>
+        <span>Print / PDF</span>
       </button>
       <a href="mailto:npgovintarajan@gmail.com?subject=Agentic%20AI%20Day%20Sponsorship%20Inquiry"
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-white hover:bg-slate-100 text-slate-900 border border-slate-300 shadow-sm transition focus-visible:ring-2 focus-visible:ring-[#C93B00]">
-        <i data-lucide="mail" class="w-4 h-4 text-[#584F7C]" aria-hidden="true"></i>
-        <span>Contact Organizers</span>
+        class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white hover:bg-slate-100 text-slate-900 border border-slate-300 shadow-sm transition focus-visible:ring-2 focus-visible:ring-[#C93B00]">
+        <i data-lucide="mail" class="w-3.5 h-3.5 text-[#584F7C]" aria-hidden="true"></i>
+        <span>Contact</span>
       </a>
     </div>
   </nav>
