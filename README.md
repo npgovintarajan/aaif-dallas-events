@@ -70,4 +70,12 @@ When deployed to GitHub Pages, the site can be accessed at:
    - Community Call for Speakers & Lightning Talk proposal submissions.
 6. **Ecosystem Partners & Sponsors (IEEE Metrocon & Chainday Format)**:
    - Technical co-sponsorship and academic partnership with IEEE Dallas Section, Agentic AI Foundation (AAIF.IO), UTD AI Society, IEEE UTD Student Chapter, and IEEE SMU Student Chapter.
-   - Tiered sponsorship showcase (Platinum, Gold, Silver/Reception) and prospectus inquiries.
+   - Collaborative sponsorship opportunities for Food & Hospitality (Breakfast, Lunch, Snacks), Official AAIF Member Products & Swag (merch.aaif.io), and Hands-on Lab infrastructure.
+
+## 🎨 Brand Guidelines & Theme
+
+Designed in accordance with official **Agentic AI Foundation (AAIF)** branding guidelines (`aaif.io/brand`) and the **AGNTCon + MCPCon North America** (Linux Foundation) visual design system:
+- **Typography**: `Instrument Sans` (open-source sans-serif) + `JetBrains Mono`
+- **Primary Palette**: Pure White (`#FFFFFF`) & Pure Black (`#000000`)
+- **Secondary Accents**: AAIF Coral (`#FF702D`) & AAIF Lilac (`#B6B0D0`)
+- **Accessibility**: Full WCAG 2.2 Level AA compliance across color contrast, keyboard tablist navigation, focus rings, and screen-reader announcements.

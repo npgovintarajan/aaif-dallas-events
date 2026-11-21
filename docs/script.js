@@ -1,20 +1,46 @@
-// Agentic AI Day Interactive Features
+// Agentic AI Day Interactive Features with WCAG 2.2 Accessibility
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize Lucide Icons
+  // Initialize Lucide Icons & add aria-hidden to decorative icons
   if (window.lucide) {
     lucide.createIcons();
+    document.querySelectorAll('svg.lucide').forEach(svg => {
+      if (!svg.hasAttribute('aria-label') && !svg.hasAttribute('aria-labelledby')) {
+        svg.setAttribute('aria-hidden', 'true');
+        svg.setAttribute('focusable', 'false');
+      }
+    });
   }
 
-  // Schedule Filter Tabs
-  const filterTabs = document.querySelectorAll('.filter-tab');
+  // Schedule Filter Tabs & Live Status
+  const filterTabs = Array.from(document.querySelectorAll('.filter-tab'));
   const scheduleItems = document.querySelectorAll('.schedule-item');
   const searchInput = document.getElementById('schedule-search');
+  const liveStatus = document.getElementById('schedule-live-status');
+
+  function updateAriaTabs(activeTabEl) {
+    filterTabs.forEach(tab => {
+      const isActive = tab === activeTabEl;
+      tab.classList.toggle('active', isActive);
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      tab.setAttribute('tabindex', isActive ? '0' : '-1');
+
+      if (isActive) {
+        tab.classList.add('bg-[#FF702D]', 'text-black', 'font-bold');
+        tab.classList.remove('bg-zinc-900', 'text-zinc-300', 'bg-slate-800', 'text-slate-300');
+      } else {
+        tab.classList.remove('bg-[#FF702D]', 'text-black', 'bg-cyan-500', 'text-slate-950');
+        tab.classList.add('bg-zinc-900', 'text-zinc-300');
+      }
+    });
+  }
 
   function applyFilters() {
-    const activeTab = document.querySelector('.filter-tab.active')?.getAttribute('data-filter') || 'all';
+    const activeTabEl = document.querySelector('.filter-tab.active') || filterTabs[0];
+    const activeTab = activeTabEl?.getAttribute('data-filter') || 'all';
     const query = (searchInput?.value || '').toLowerCase().trim();
     let visibleCount = 0;
+    const totalCount = scheduleItems.length;
 
     scheduleItems.forEach(item => {
       let matchesTab = false;
@@ -32,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const itemText = (item.innerText || '').toLowerCase();
       const itemTags = (item.getAttribute('data-tags') || '').toLowerCase();
       
-      // Multi-word search matching: each word in the query must match either text or tags
       const queryWords = query.split(/\s+/).filter(Boolean);
       const matchesSearch = queryWords.length === 0 || queryWords.every(word => 
         itemText.includes(word) || itemTags.includes(word)
@@ -40,9 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (matchesTab && matchesSearch) {
         item.style.display = '';
+        item.removeAttribute('aria-hidden');
         visibleCount++;
       } else {
         item.style.display = 'none';
+        item.setAttribute('aria-hidden', 'true');
       }
     });
 
@@ -52,55 +79,81 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!emptyState) {
         emptyState = document.createElement('div');
         emptyState.id = 'schedule-empty-state';
-        emptyState.className = 'p-8 rounded-2xl bg-slate-900/60 border border-slate-800 text-center text-slate-400 text-sm font-mono';
-        emptyState.innerHTML = '<p class="text-white font-bold mb-1">No sessions match your search</p><p class="text-xs text-slate-500">Try searching for a speaker (e.g. "Keynote", "Systems Lead"), topic (e.g. "MCP", "Firecracker"), or reset the track filter.</p>';
+        emptyState.className = 'p-8 rounded-2xl bg-slate-900/60 border border-slate-800 text-center text-slate-300 text-sm font-mono';
+        emptyState.innerHTML = '<p class="text-white font-bold mb-1">No sessions match your search</p><p class="text-xs text-slate-400">Try searching for a speaker, topic (e.g. "MCP", "Firecracker"), or reset the track filter.</p>';
         document.getElementById('schedule-list')?.appendChild(emptyState);
       }
       emptyState.style.display = '';
     } else if (emptyState) {
       emptyState.style.display = 'none';
     }
+
+    // Announce to screen readers via live region (WCAG 4.1.3)
+    if (liveStatus) {
+      if (visibleCount === 0) {
+        liveStatus.textContent = 'No sessions found matching current filter and search criteria.';
+      } else {
+        liveStatus.textContent = `Showing ${visibleCount} of ${totalCount} sessions.`;
+      }
+    }
   }
 
-  // Tab click events
-  filterTabs.forEach(tab => {
+  // Keyboard Navigation for Tabs (WCAG 2.1.1, WAI-ARIA Tablist Pattern)
+  filterTabs.forEach((tab, index) => {
     tab.addEventListener('click', () => {
-      filterTabs.forEach(t => {
-        t.classList.remove('active');
-        t.classList.remove('bg-cyan-500');
-        t.classList.remove('text-slate-950');
-        t.classList.add('bg-slate-800');
-        t.classList.add('text-slate-300');
-      });
-
-      tab.classList.add('active');
-      tab.classList.add('bg-cyan-500');
-      tab.classList.add('text-slate-950');
-      tab.classList.remove('bg-slate-800');
-      tab.classList.remove('text-slate-300');
-
+      updateAriaTabs(tab);
       applyFilters();
+    });
+
+    tab.addEventListener('keydown', (e) => {
+      let nextIndex = null;
+      if (e.key === 'ArrowRight') {
+        nextIndex = (index + 1) % filterTabs.length;
+      } else if (e.key === 'ArrowLeft') {
+        nextIndex = (index - 1 + filterTabs.length) % filterTabs.length;
+      } else if (e.key === 'Home') {
+        nextIndex = 0;
+      } else if (e.key === 'End') {
+        nextIndex = filterTabs.length - 1;
+      }
+
+      if (nextIndex !== null) {
+        e.preventDefault();
+        const nextTab = filterTabs[nextIndex];
+        nextTab.focus();
+        updateAriaTabs(nextTab);
+        applyFilters();
+      }
     });
   });
 
-  // Search input events
+  // Search input events with debounced live status update
   if (searchInput) {
-    searchInput.addEventListener('input', applyFilters);
+    let debounceTimer;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(applyFilters, 150);
+    });
+  }
+
+  // Run initial state setup
+  const initialActive = document.querySelector('.filter-tab.active') || filterTabs[0];
+  if (initialActive) {
+    updateAriaTabs(initialActive);
   }
 });
 
-// Copy snippet to clipboard helper
+// Accessible copy snippet helper with screen reader announcement
 function copySnippet(elementId) {
   const el = document.getElementById(elementId);
   if (!el) return;
 
   const text = el.innerText || el.textContent;
   navigator.clipboard.writeText(text).then(() => {
-    // Show toast or temporary indicator
     const btn = event?.currentTarget;
     if (btn) {
       const originalHTML = btn.innerHTML;
-      btn.innerHTML = '<span class="text-emerald-400 font-bold">✓ Copied!</span>';
+      btn.innerHTML = '<span class="text-emerald-400 font-bold" aria-live="polite">✓ Copied!</span>';
       setTimeout(() => {
         btn.innerHTML = originalHTML;
         if (window.lucide) lucide.createIcons();
@@ -110,4 +163,3 @@ function copySnippet(elementId) {
     console.error('Failed to copy: ', err);
   });
 }
-

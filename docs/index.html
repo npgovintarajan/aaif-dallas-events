@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agentic AI Day — AAIF Dallas Chapter | Production Readiness & Run-of-Show Guide</title>
   <meta name="description" content="Agentic AI Day: Full-day technical workshop and conference on architectural patterns, multi-agent interoperability, MCP, A2A, and enterprise security. Hosted by AAIF Dallas." />
-  <meta name="theme-color" content="#090d16" />
+  <meta name="theme-color" content="#000000" />
 
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website" />
@@ -15,7 +15,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -25,25 +25,27 @@
       theme: {
         extend: {
           colors: {
-            brand: {
-              50: '#f0fdf4',
-              100: '#dcfce7',
-              400: '#4ade80',
-              500: '#22c55e',
-              600: '#16a34a',
-            },
-            cyber: {
-              dark: '#070a12',
-              card: '#0f172a',
-              cardBorder: '#1e293b',
-              accent: '#38bdf8',
-              purple: '#a855f7',
-              amber: '#f59e0b',
-              rose: '#f43f5e'
+            aaif: {
+              black: '#000000',
+              dark: '#08090d',
+              card: '#0e1017',
+              cardBorder: '#212636',
+              coral: {
+                DEFAULT: '#FF702D',
+                hover: '#ff8548',
+                light: '#ffa070',
+                dark: '#e05917',
+              },
+              lilac: {
+                DEFAULT: '#B6B0D0',
+                hover: '#c8c3de',
+                light: '#dedae9',
+                dark: '#9891b6',
+              }
             }
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"Instrument Sans"', '"Plus Jakarta Sans"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
           }
         }
@@ -58,34 +60,39 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="bg-[#070a12] text-slate-200 font-sans antialiased selection:bg-cyan-500 selection:text-black">
-  <!-- Top Background Ambient Glow -->
-  <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gradient-to-tr from-cyan-600/15 via-blue-600/10 to-purple-600/15 blur-[120px] rounded-full"></div>
-    <div class="absolute top-[800px] right-0 w-[500px] h-[450px] bg-emerald-500/10 blur-[130px] rounded-full"></div>
-    <div class="absolute top-[1800px] left-0 w-[600px] h-[500px] bg-indigo-500/10 blur-[140px] rounded-full"></div>
-    <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b12_1px,transparent_1px),linear-gradient(to_bottom,#1e293b12_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+<body class="bg-[#000000] text-zinc-200 font-sans antialiased selection:bg-[#FF702D] selection:text-black">
+  <!-- Skip to Main Content Link (WCAG 2.4.1) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only">
+    Skip to main content
+  </a>
+
+  <!-- Top Background Ambient Glow — AAIF Coral & Lilac Atmospheric Layers -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10" aria-hidden="true">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gradient-to-tr from-[#FF702D]/12 via-[#B6B0D0]/10 to-transparent blur-[140px] rounded-full"></div>
+    <div class="absolute top-[800px] right-0 w-[500px] h-[450px] bg-[#FF702D]/08 blur-[130px] rounded-full"></div>
+    <div class="absolute top-[1800px] left-0 w-[600px] h-[500px] bg-[#B6B0D0]/08 blur-[140px] rounded-full"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#2126361a_1px,transparent_1px),linear-gradient(to_bottom,#2126361a_1px,transparent_1px)] bg-[size:32px_32px]"></div>
   </div>
 
   <!-- Navigation Bar -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#070a12]/80 border-b border-slate-800/80 transition-all">
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-black/90 border-b border-zinc-800/90 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <!-- Logo & Subtitle -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="h-10 px-2 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center shadow-inner group-hover:border-cyan-500/40 transition">
-          <img src="assets/AAIF_Primary_Logo_White.svg" alt="AAIF Logo" class="h-7 w-auto object-contain" />
+      <a href="#" class="flex items-center gap-3 group" aria-label="Agentic AI Day Home - AAIF Dallas Chapter">
+        <div class="h-10 px-2 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center shadow-inner group-hover:border-[#FF702D]/50 transition">
+          <img src="assets/AAIF_Primary_Logo_White.svg" alt="Agentic AI Foundation (AAIF) Logo" class="h-7 w-auto object-contain" />
         </div>
         <div class="hidden sm:flex flex-col">
-          <span class="text-xs uppercase tracking-widest font-semibold text-cyan-400">Dallas Chapter</span>
+          <span class="text-xs uppercase tracking-widest font-semibold text-[#B6B0D0]">Dallas Chapter</span>
           <span class="text-sm font-bold text-white tracking-tight flex items-center gap-1.5">
             Agentic AI Day
-            <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true"></span>
           </span>
         </div>
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
+      <nav aria-label="Main Navigation" class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
         <a href="#overview" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Overview</a>
         <a href="#schedule" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Schedule</a>
         <a href="#sessions" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Technical Sessions</a>
@@ -96,35 +103,38 @@
 
       <!-- Action Buttons -->
       <div class="flex items-center gap-2.5">
-        <button onclick="window.print()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 transition" title="Print Run-of-Show Guide">
-          <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+        <button onclick="window.print()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 transition" title="Print Run-of-Show Guide" aria-label="Print Run-of-Show Guide">
+          <i data-lucide="printer" class="w-3.5 h-3.5" aria-hidden="true"></i>
           <span>Print / PDF</span>
         </button>
-        <a href="#schedule" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/35 transition-all">
+        <a href="#schedule" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#FF702D] hover:bg-[#ff8548] text-black shadow-lg shadow-[#FF702D]/25 transition-all">
           <span>Run of Show</span>
-          <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+          <i data-lucide="arrow-down-right" class="w-4 h-4" aria-hidden="true"></i>
         </a>
       </div>
     </div>
   </header>
+
+  <!-- Main Content Landmark (WCAG 1.3.1, 2.4.1) -->
+  <main id="main-content">
 
   <!-- Hero Section -->
   <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-4xl mx-auto">
         <!-- Event Badge (Metrocon / Chainday Style) -->
-        <div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-2 rounded-full bg-slate-900/90 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-6 shadow-sm shadow-cyan-500/10">
+        <div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-2 rounded-full bg-slate-900/90 border border-[#FF702D]/35 text-zinc-200 text-xs font-mono mb-6 shadow-sm shadow-[#FF702D]/15">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           <span class="font-bold text-white">SATURDAY, JANUARY 23, 2027</span>
           <span class="text-slate-600">•</span>
-          <span class="flex items-center gap-1 text-cyan-300"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-400"></i> DALLAS, TX</span>
+          <span class="flex items-center gap-1 text-[#FF702D] font-bold"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#FF702D]"></i> DALLAS, TX</span>
           <span class="text-slate-600">•</span>
           <span class="text-slate-300">AAIF DALLAS IN COOPERATION WITH IEEE</span>
         </div>
 
         <!-- Main Title -->
         <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
-          Agentic AI <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400">Day</span>
+          Agentic AI <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#B6B0D0] to-[#FF702D]">Day</span>
         </h1>
 
         <!-- Subtitle & Focus -->
@@ -154,7 +164,7 @@
 
         <!-- Hero Actions -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-6">
-          <a href="#schedule" class="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 shadow-xl shadow-cyan-500/20 flex items-center justify-center gap-2 transition">
+          <a href="#schedule" class="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-sm bg-[#FF702D] hover:bg-[#ff8548] text-black shadow-xl shadow-[#FF702D]/25 flex items-center justify-center gap-2 transition">
             <i data-lucide="calendar" class="w-4 h-4"></i>
             <span>View Schedule & Speakers</span>
           </a>
@@ -169,8 +179,8 @@
         </div>
 
         <!-- Registration & Prerequisites Notice Bar -->
-        <div class="inline-flex items-center gap-2 p-2.5 px-4 rounded-xl bg-slate-950/80 border border-emerald-500/30 text-xs font-mono text-slate-300 max-w-2xl text-left">
-          <i data-lucide="info" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+        <div class="inline-flex items-center gap-2 p-2.5 px-4 rounded-xl bg-zinc-950/90 border border-[#FF702D]/35 text-xs font-mono text-zinc-300 max-w-2xl text-left">
+          <i data-lucide="info" class="w-4 h-4 text-[#FF702D] shrink-0"></i>
           <span><strong>Registration Notice:</strong> Environment setup instructions, code repository access, and prerequisites will be emailed directly to registered participants prior to the event.</span>
         </div>
       </div>
@@ -206,7 +216,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div>
-          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Section 1</span>
+          <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#FF702D]">Section 1</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Event Architecture & Objectives</h2>
         </div>
         <p class="text-slate-400 text-sm max-w-xl mt-3 md:mt-0">
@@ -219,12 +229,12 @@
         <!-- Track A Card -->
         <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-900/40 border border-slate-800 hover:border-cyan-500/40 transition group">
           <div class="flex items-center justify-between mb-4">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-              <i data-lucide="layers" class="w-3.5 h-3.5"></i> TRACK A • MAIN AUDITORIUM
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#FF702D]/10 text-[#FF702D] border border-[#FF702D]/30">
+              <i data-lucide="layers" class="w-3.5 h-3.5 text-[#FF702D]"></i> TRACK A • MAIN AUDITORIUM
             </span>
             <span class="text-xs text-slate-500 font-mono">1:15 PM – 4:30 PM</span>
           </div>
-          <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition">
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-[#FF702D] transition">
             Deep-Dive Systems Engineering
           </h3>
           <p class="text-slate-300 text-sm leading-relaxed mb-6">
@@ -253,12 +263,12 @@
         <!-- Track B Card -->
         <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-900/40 border border-slate-800 hover:border-emerald-500/40 transition group">
           <div class="flex items-center justify-between mb-4">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              <i data-lucide="terminal" class="w-3.5 h-3.5"></i> TRACK B • HANDS-ON LAB
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#B6B0D0]/10 text-[#B6B0D0] border border-[#B6B0D0]/30">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-[#B6B0D0]"></i> TRACK B • HANDS-ON LAB
             </span>
             <span class="text-xs text-slate-500 font-mono">1:15 PM – 4:30 PM</span>
           </div>
-          <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-emerald-300 transition">
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-[#B6B0D0] transition">
             Practical Implementation & Protocols
           </h3>
           <p class="text-slate-300 text-sm leading-relaxed mb-6">
@@ -292,7 +302,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
         <div>
-          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Section 2</span>
+          <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#FF702D]">Section 2</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Full-Day Run-of-Show Schedule</h2>
         </div>
         <div class="text-xs font-mono text-slate-400 mt-2 md:mt-0 flex items-center gap-2">
@@ -301,39 +311,43 @@
         </div>
       </div>
 
-      <!-- Schedule Filter & Search Bar -->
+      <!-- Schedule Filter & Search Bar (WCAG 2.1.1, 4.1.2, 4.1.3) -->
       <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
         <!-- Filter Tabs -->
-        <div class="flex flex-wrap items-center gap-1.5 w-full sm:w-auto" id="schedule-tabs">
-          <button data-filter="all" class="filter-tab active px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500 text-slate-950 transition">
+        <div class="flex flex-wrap items-center gap-1.5 w-full sm:w-auto" id="schedule-tabs" role="tablist" aria-label="Filter schedule by track">
+          <button data-filter="all" id="tab-all" role="tab" aria-selected="true" aria-controls="schedule-list" class="filter-tab active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#FF702D] text-black transition">
             All Sessions
           </button>
-          <button data-filter="plenary" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">
+          <button data-filter="plenary" id="tab-plenary" role="tab" aria-selected="false" aria-controls="schedule-list" tabindex="-1" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">
             Keynotes & Plenary
           </button>
-          <button data-filter="track-a" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">
+          <button data-filter="track-a" id="tab-track-a" role="tab" aria-selected="false" aria-controls="schedule-list" tabindex="-1" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">
             Track A (Auditorium)
           </button>
-          <button data-filter="track-b" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">
+          <button data-filter="track-b" id="tab-track-b" role="tab" aria-selected="false" aria-controls="schedule-list" tabindex="-1" class="filter-tab px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">
             Track B (Hands-On Lab)
           </button>
         </div>
 
-        <!-- Search Input -->
+        <!-- Search Input with Accessible Label (WCAG 1.3.1, 3.3.2) -->
         <div class="relative w-full sm:w-80">
-          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
-          <input type="text" id="schedule-search" placeholder="Search by topic, speaker, track, or tools..." class="w-full pl-9 pr-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/60 transition" />
+          <label for="schedule-search" class="sr-only">Search schedule sessions by topic, speaker, track, or tools</label>
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" aria-hidden="true"></i>
+          <input type="search" id="schedule-search" aria-label="Search schedule sessions by topic, speaker, track, or tools" placeholder="Search by topic, speaker, track, or tools..." class="w-full pl-9 pr-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-cyan-500/60 transition" />
         </div>
       </div>
 
+      <!-- Live Region for Screen Readers (WCAG 4.1.3) -->
+      <div id="schedule-live-status" role="status" aria-live="polite" class="sr-only"></div>
+
       <!-- Timeline Schedule Items -->
-      <div class="space-y-4" id="schedule-list">
+      <div class="space-y-4" id="schedule-list" role="region" aria-label="Event Run-of-Show Schedule">
 
         <!-- 08:00 - 09:00 Registration -->
         <div class="schedule-item plenary p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition" data-tags="registration badge coffee onboarding foyer operations staff">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
             <div class="flex items-center gap-2.5">
-              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/40">08:00 – 09:00</span>
+              <span class="font-mono text-xs font-bold text-[#FF702D] bg-[#FF702D]/10 px-2.5 py-1 rounded-md border border-[#FF702D]/30 font-bold">08:00 – 09:00</span>
               <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">
                 <i data-lucide="map-pin" class="w-3 h-3 text-amber-400"></i> Main Foyer
               </span>
@@ -348,8 +362,8 @@
         <div class="schedule-item plenary p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition" data-tags="keynote production shift prompt wrappers autonomous multi-agent stateful speaker keynote speaker 1 keynote 1">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
             <div class="flex items-center gap-2.5">
-              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/40">09:00 – 09:45</span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-purple-950/50 text-purple-300 border border-purple-800/40">
+              <span class="font-mono text-xs font-bold text-[#FF702D] bg-[#FF702D]/10 px-2.5 py-1 rounded-md border border-[#FF702D]/30 font-bold">09:00 – 09:45</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-[#B6B0D0]/15 text-[#B6B0D0] border border-[#B6B0D0]/30 font-bold">
                 <i data-lucide="sparkles" class="w-3 h-3 text-purple-400"></i> Keynote 1 • Main Auditorium
               </span>
             </div>
@@ -358,7 +372,7 @@
           <h3 class="text-lg font-bold text-white">The Production Shift</h3>
           <p class="text-sm text-slate-300 mt-1"><strong class="text-white">Moving from Single-Prompt Wrappers to Autonomous Multi-Agent Systems.</strong> Transitioning to resilient, stateful agent networks, deterministic checkpoints, and production uptime engineering.</p>
           <div class="mt-3 flex items-center gap-2">
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs font-mono font-medium bg-purple-950/70 text-purple-300 border border-purple-800/40">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs font-mono font-medium bg-zinc-900 text-zinc-300 border border-zinc-700">
               <i data-lucide="user" class="w-3.5 h-3.5 text-purple-400"></i>
               <span>Speaker: Keynote Speaker 1 (Announcing Soon)</span>
             </span>
@@ -369,8 +383,8 @@
         <div class="schedule-item plenary p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition" data-tags="keynote internet of agents protocols cross-organizational decentralized negotiation speaker keynote speaker 2 keynote 2">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
             <div class="flex items-center gap-2.5">
-              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/40">09:45 – 10:30</span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-purple-950/50 text-purple-300 border border-purple-800/40">
+              <span class="font-mono text-xs font-bold text-[#FF702D] bg-[#FF702D]/10 px-2.5 py-1 rounded-md border border-[#FF702D]/30 font-bold">09:45 – 10:30</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-[#B6B0D0]/15 text-[#B6B0D0] border border-[#B6B0D0]/30 font-bold">
                 <i data-lucide="sparkles" class="w-3 h-3 text-purple-400"></i> Keynote 2 • Main Auditorium
               </span>
             </div>
@@ -379,7 +393,7 @@
           <h3 class="text-lg font-bold text-white">The Internet of Agents</h3>
           <p class="text-sm text-slate-300 mt-1"><strong class="text-white">Cross-Organizational Communication & Protocols.</strong> Open standards, decentralized ecosystems, dynamic capability registries, and cross-boundary negotiation.</p>
           <div class="mt-3 flex items-center gap-2">
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs font-mono font-medium bg-purple-950/70 text-purple-300 border border-purple-800/40">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs font-mono font-medium bg-zinc-900 text-zinc-300 border border-zinc-700">
               <i data-lucide="user" class="w-3.5 h-3.5 text-purple-400"></i>
               <span>Speaker: Keynote Speaker 2 (Announcing Soon)</span>
             </span>
@@ -399,7 +413,7 @@
         <div class="schedule-item plenary p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition" data-tags="architecture orchestration choreography state management hitl durable execution speaker architecture lead session lead">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
             <div class="flex items-center gap-2.5">
-              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/40">10:45 – 11:30</span>
+              <span class="font-mono text-xs font-bold text-[#FF702D] bg-[#FF702D]/10 px-2.5 py-1 rounded-md border border-[#FF702D]/30 font-bold">10:45 – 11:30</span>
               <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-blue-950/50 text-blue-300 border border-blue-800/40">
                 <i data-lucide="compass" class="w-3 h-3 text-blue-400"></i> Main Auditorium
               </span>
@@ -420,7 +434,7 @@
         <div class="schedule-item plenary p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition" data-tags="discovery identity trust spiffe spire oauth cryptographic attestation capability registries speaker identity lead security lead">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
             <div class="flex items-center gap-2.5">
-              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/40">11:30 – 12:15</span>
+              <span class="font-mono text-xs font-bold text-[#FF702D] bg-[#FF702D]/10 px-2.5 py-1 rounded-md border border-[#FF702D]/30 font-bold">11:30 – 12:15</span>
               <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-blue-950/50 text-blue-300 border border-blue-800/40">
                 <i data-lucide="shield" class="w-3 h-3 text-indigo-400"></i> Main Auditorium
               </span>
@@ -454,10 +468,10 @@
         <!-- 01:15 - 02:00 Split Sessions -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <!-- Track A -->
-          <div class="schedule-item track-a p-5 rounded-2xl bg-slate-900/80 border border-cyan-900/50 hover:border-cyan-500/50 transition" data-tags="sandboxing runtimes microvms wasm firecracker isolation track-a auditorium speaker track a systems lead">
+          <div class="schedule-item track-a p-5 rounded-2xl bg-slate-900/80 border border-zinc-800 hover:border-[#FF702D]/50 transition" data-tags="sandboxing runtimes microvms wasm firecracker isolation track-a auditorium speaker track a systems lead">
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">01:15 – 02:00</span>
-              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">TRACK A • AUDITORIUM</span>
+              <span class="font-mono text-xs font-bold text-[#FF702D] bg-[#FF702D]/10 px-2 py-0.5 rounded border border-[#FF702D]/30 font-bold">01:15 – 02:00</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#FF702D]/10 text-[#FF702D] border border-[#FF702D]/30 font-bold">TRACK A • AUDITORIUM</span>
             </div>
             <h4 class="text-base font-bold text-white">Sandboxing & Runtimes</h4>
             <p class="text-xs text-slate-300 mt-1"><strong>MicroVMs, Wasm & AI-DLC Isolation.</strong> Memory safety, cold-start mitigation, and hypervisor-level isolation for untrusted code execution.</p>
@@ -470,10 +484,10 @@
           </div>
 
           <!-- Track B -->
-          <div class="schedule-item track-b p-5 rounded-2xl bg-slate-900/80 border border-emerald-900/50 hover:border-emerald-500/50 transition" data-tags="lab 1 mcp model context protocol servers tools auth sse track-b lab facilitator mcp facilitator workshop lead">
+          <div class="schedule-item track-b p-5 rounded-2xl bg-slate-900/80 border border-zinc-800 hover:border-[#B6B0D0]/50 transition" data-tags="lab 1 mcp model context protocol servers tools auth sse track-b lab facilitator mcp facilitator workshop lead">
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">01:15 – 02:00</span>
-              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">TRACK B • HANDS-ON LAB</span>
+              <span class="font-mono text-xs font-bold text-[#B6B0D0] bg-[#B6B0D0]/10 px-2 py-0.5 rounded border border-[#B6B0D0]/30 font-bold">01:15 – 02:00</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#B6B0D0]/10 text-[#B6B0D0] border border-[#B6B0D0]/30 font-bold">TRACK B • HANDS-ON LAB</span>
             </div>
             <h4 class="text-base font-bold text-white">Lab 1: Production MCP Servers</h4>
             <p class="text-xs text-slate-300 mt-1"><strong>Tool Definitions & Auth.</strong> Exposing enterprise resources via standard MCP interfaces, transport security (SSE/Streamable HTTP), and scoped OAuth.</p>
@@ -489,10 +503,10 @@
         <!-- 02:00 - 02:45 Split Sessions -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <!-- Track A -->
-          <div class="schedule-item track-a p-5 rounded-2xl bg-slate-900/80 border border-cyan-900/50 hover:border-cyan-500/50 transition" data-tags="gateways vulnerabilities prompt injection egress filtering pii redaction track-a auditorium speaker track a security lead">
+          <div class="schedule-item track-a p-5 rounded-2xl bg-slate-900/80 border border-zinc-800 hover:border-[#FF702D]/50 transition" data-tags="gateways vulnerabilities prompt injection egress filtering pii redaction track-a auditorium speaker track a security lead">
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">02:00 – 02:45</span>
-              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">TRACK A • AUDITORIUM</span>
+              <span class="font-mono text-xs font-bold text-[#FF702D] bg-[#FF702D]/10 px-2 py-0.5 rounded border border-[#FF702D]/30 font-bold">02:00 – 02:45</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#FF702D]/10 text-[#FF702D] border border-[#FF702D]/30 font-bold">TRACK A • AUDITORIUM</span>
             </div>
             <h4 class="text-base font-bold text-white">Gateways & Vulnerabilities</h4>
             <p class="text-xs text-slate-300 mt-1"><strong>Prompt Injection & Egress Filtering.</strong> Defense-in-depth against indirect injection, confused deputy scenarios, and real-time PII redaction.</p>
@@ -505,10 +519,10 @@
           </div>
 
           <!-- Track B -->
-          <div class="schedule-item track-b p-5 rounded-2xl bg-slate-900/80 border border-emerald-900/50 hover:border-emerald-500/50 transition" data-tags="lab 1 continued hardening mcp tool poisoning rug pull schema track-b lab facilitator mcp facilitator workshop lead">
+          <div class="schedule-item track-b p-5 rounded-2xl bg-slate-900/80 border border-zinc-800 hover:border-[#B6B0D0]/50 transition" data-tags="lab 1 continued hardening mcp tool poisoning rug pull schema track-b lab facilitator mcp facilitator workshop lead">
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">02:00 – 02:45</span>
-              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">TRACK B • HANDS-ON LAB</span>
+              <span class="font-mono text-xs font-bold text-[#B6B0D0] bg-[#B6B0D0]/10 px-2 py-0.5 rounded border border-[#B6B0D0]/30 font-bold">02:00 – 02:45</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#B6B0D0]/10 text-[#B6B0D0] border border-[#B6B0D0]/30 font-bold">TRACK B • HANDS-ON LAB</span>
             </div>
             <h4 class="text-base font-bold text-white">Lab 1 Continued: Hardening MCP</h4>
             <p class="text-xs text-slate-300 mt-1"><strong>Mitigating Tool Poisoning.</strong> Defending against rug-pull attacks, schema manipulation, and enforcing gateway security policies programmatically.</p>
@@ -533,10 +547,10 @@
         <!-- 03:00 - 03:45 Split Sessions -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <!-- Track A -->
-          <div class="schedule-item track-a p-5 rounded-2xl bg-slate-900/80 border border-cyan-900/50 hover:border-cyan-500/50 transition" data-tags="observability tracing opentelemetry otel evidence artifacts audit logs track-a auditorium speaker track a systems lead otel lead">
+          <div class="schedule-item track-a p-5 rounded-2xl bg-slate-900/80 border border-zinc-800 hover:border-[#FF702D]/50 transition" data-tags="observability tracing opentelemetry otel evidence artifacts audit logs track-a auditorium speaker track a systems lead otel lead">
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">03:00 – 03:45</span>
-              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">TRACK A • AUDITORIUM</span>
+              <span class="font-mono text-xs font-bold text-[#FF702D] bg-[#FF702D]/10 px-2 py-0.5 rounded border border-[#FF702D]/30 font-bold">03:00 – 03:45</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#FF702D]/10 text-[#FF702D] border border-[#FF702D]/30 font-bold">TRACK A • AUDITORIUM</span>
             </div>
             <h4 class="text-base font-bold text-white">Observability & Tracing</h4>
             <p class="text-xs text-slate-300 mt-1"><strong>OpenTelemetry & Evidence Artifacts.</strong> Mapping non-deterministic execution paths into structured trace trees and verifiable audit logs.</p>
@@ -549,10 +563,10 @@
           </div>
 
           <!-- Track B -->
-          <div class="schedule-item track-b p-5 rounded-2xl bg-slate-900/80 border border-emerald-900/50 hover:border-emerald-500/50 transition" data-tags="lab 2 a2a multi-agent interop agent cards task lifecycles track-b lab facilitator a2a facilitator workshop lead">
+          <div class="schedule-item track-b p-5 rounded-2xl bg-slate-900/80 border border-zinc-800 hover:border-[#B6B0D0]/50 transition" data-tags="lab 2 a2a multi-agent interop agent cards task lifecycles track-b lab facilitator a2a facilitator workshop lead">
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">03:00 – 03:45</span>
-              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">TRACK B • HANDS-ON LAB</span>
+              <span class="font-mono text-xs font-bold text-[#B6B0D0] bg-[#B6B0D0]/10 px-2 py-0.5 rounded border border-[#B6B0D0]/30 font-bold">03:00 – 03:45</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#B6B0D0]/10 text-[#B6B0D0] border border-[#B6B0D0]/30 font-bold">TRACK B • HANDS-ON LAB</span>
             </div>
             <h4 class="text-base font-bold text-white">Lab 2: Multi-Agent A2A Interop</h4>
             <p class="text-xs text-slate-300 mt-1"><strong>Agent Cards & Task Lifecycles.</strong> Publishing <code>/.well-known/agent.json</code>, handling asynchronous task state changes, and negotiating capabilities.</p>
@@ -568,10 +582,10 @@
         <!-- 03:45 - 04:30 Split Sessions -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <!-- Track A -->
-          <div class="schedule-item track-a p-5 rounded-2xl bg-slate-900/80 border border-cyan-900/50 hover:border-cyan-500/50 transition" data-tags="trajectory causality path grading drift analysis cyclic loops track-a auditorium speaker track a systems lead">
+          <div class="schedule-item track-a p-5 rounded-2xl bg-slate-900/80 border border-zinc-800 hover:border-[#FF702D]/50 transition" data-tags="trajectory causality path grading drift analysis cyclic loops track-a auditorium speaker track a systems lead">
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">03:45 – 04:30</span>
-              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">TRACK A • AUDITORIUM</span>
+              <span class="font-mono text-xs font-bold text-[#FF702D] bg-[#FF702D]/10 px-2 py-0.5 rounded border border-[#FF702D]/30 font-bold">03:45 – 04:30</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#FF702D]/10 text-[#FF702D] border border-[#FF702D]/30 font-bold">TRACK A • AUDITORIUM</span>
             </div>
             <h4 class="text-base font-bold text-white">Trajectory & Causality</h4>
             <p class="text-xs text-slate-300 mt-1"><strong>Path Grading & Drift Analysis.</strong> Assessing decision-tree efficiency, detecting cyclic loops, and evaluating context-causality metrics.</p>
@@ -584,10 +598,10 @@
           </div>
 
           <!-- Track B -->
-          <div class="schedule-item track-b p-5 rounded-2xl bg-slate-900/80 border border-emerald-900/50 hover:border-emerald-500/50 transition" data-tags="lab 2 continued pipeline orchestrator remote a2a peers private mcp trace ids track-b lab facilitator a2a facilitator workshop lead">
+          <div class="schedule-item track-b p-5 rounded-2xl bg-slate-900/80 border border-zinc-800 hover:border-[#B6B0D0]/50 transition" data-tags="lab 2 continued pipeline orchestrator remote a2a peers private mcp trace ids track-b lab facilitator a2a facilitator workshop lead">
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">03:45 – 04:30</span>
-              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">TRACK B • HANDS-ON LAB</span>
+              <span class="font-mono text-xs font-bold text-[#B6B0D0] bg-[#B6B0D0]/10 px-2 py-0.5 rounded border border-[#B6B0D0]/30 font-bold">03:45 – 04:30</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#B6B0D0]/10 text-[#B6B0D0] border border-[#B6B0D0]/30 font-bold">TRACK B • HANDS-ON LAB</span>
             </div>
             <h4 class="text-base font-bold text-white">Lab 2 Continued: End-to-End Workflow</h4>
             <p class="text-xs text-slate-300 mt-1"><strong>Full Pipeline Integration.</strong> Connecting an orchestrator agent to remote A2A peers backed by private MCP servers using distributed trace IDs.</p>
@@ -604,8 +618,8 @@
         <div class="schedule-item plenary p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950/40 to-slate-900 border border-slate-800 hover:border-cyan-500/40 transition" data-tags="closing remarks happy hour networking plenary foyer auditorium">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
             <div class="flex items-center gap-2.5">
-              <span class="font-mono text-xs font-bold text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/40">04:30 – 05:00</span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-purple-950/50 text-purple-300 border border-purple-800/40">
+              <span class="font-mono text-xs font-bold text-[#FF702D] bg-[#FF702D]/10 px-2.5 py-1 rounded-md border border-[#FF702D]/30 font-bold">04:30 – 05:00</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono bg-[#B6B0D0]/15 text-[#B6B0D0] border border-[#B6B0D0]/30 font-bold">
                 <i data-lucide="glass-water" class="w-3 h-3 text-purple-400"></i> Main Auditorium & Foyer
               </span>
             </div>
@@ -624,7 +638,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div>
-          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Section 3</span>
+          <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#FF702D]">Section 3</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Technical Session Scope & Speaker Guide</h2>
         </div>
         <p class="text-slate-400 text-sm max-w-xl mt-3 md:mt-0">
@@ -780,7 +794,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div>
-          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-emerald-400">Section 4</span>
+          <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#B6B0D0]">Section 4</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Hands-On Workshop Guide (MCP & A2A)</h2>
         </div>
         <p class="text-slate-400 text-sm max-w-xl mt-3 md:mt-0">
@@ -845,15 +859,15 @@
             </div>
           </div>
 
-          <!-- Code Snippet Box -->
+          <!-- Code Snippet Box (WCAG 2.1.1 Keyboard Scrollable) -->
           <div class="rounded-xl bg-slate-950 border border-slate-800 overflow-hidden text-xs font-mono">
             <div class="px-3.5 py-2 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
               <span class="text-slate-400">mcp-server-config.json</span>
-              <button onclick="copySnippet('mcp-snippet')" class="text-slate-400 hover:text-white transition flex items-center gap-1">
-                <i data-lucide="copy" class="w-3 h-3"></i> Copy
+              <button onclick="copySnippet('mcp-snippet')" aria-label="Copy MCP Server Configuration JSON code to clipboard" class="text-slate-400 hover:text-white transition flex items-center gap-1 focus-visible:ring-2 focus-visible:ring-cyan-400">
+                <i data-lucide="copy" class="w-3 h-3" aria-hidden="true"></i> Copy
               </button>
             </div>
-            <pre id="mcp-snippet" class="p-4 text-slate-300 overflow-x-auto"><code>{
+            <pre id="mcp-snippet" tabindex="0" role="region" aria-label="MCP Server Configuration JSON Code" class="p-4 text-slate-300 overflow-x-auto focus-visible:ring-1 focus-visible:ring-cyan-400"><code>{
   "name": "enterprise-tickets-mcp",
   "version": "1.0.0",
   "transport": "sse",
@@ -898,15 +912,15 @@
             </div>
           </div>
 
-          <!-- Code Snippet Box -->
+          <!-- Code Snippet Box (WCAG 2.1.1 Keyboard Scrollable) -->
           <div class="rounded-xl bg-slate-950 border border-slate-800 overflow-hidden text-xs font-mono">
             <div class="px-3.5 py-2 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
               <span class="text-slate-400">/.well-known/agent.json</span>
-              <button onclick="copySnippet('a2a-snippet')" class="text-slate-400 hover:text-white transition flex items-center gap-1">
-                <i data-lucide="copy" class="w-3 h-3"></i> Copy
+              <button onclick="copySnippet('a2a-snippet')" aria-label="Copy agent.json specification code to clipboard" class="text-slate-400 hover:text-white transition flex items-center gap-1 focus-visible:ring-2 focus-visible:ring-cyan-400">
+                <i data-lucide="copy" class="w-3 h-3" aria-hidden="true"></i> Copy
               </button>
             </div>
-            <pre id="a2a-snippet" class="p-4 text-slate-300 overflow-x-auto"><code>{
+            <pre id="a2a-snippet" tabindex="0" role="region" aria-label="Agent JSON Card Specification Code" class="p-4 text-slate-300 overflow-x-auto focus-visible:ring-1 focus-visible:ring-cyan-400"><code>{
   "agent_id": "aaif.dallas.billing-agent-01",
   "name": "Enterprise Billing Agent",
   "protocol_version": "a2a/v1.0",
@@ -928,7 +942,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div>
-          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Section 5</span>
+          <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#FF702D]">Section 5</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Featured Speakers & Technical Leads</h2>
         </div>
         <p class="text-slate-400 text-sm max-w-xl mt-3 md:mt-0">
@@ -947,7 +961,7 @@
                 <img src="assets/speaker-placeholder.svg" alt="Keynote Speaker 1" class="w-full h-full object-cover" />
               </div>
               <div>
-                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-950/70 text-purple-300 border border-purple-800/40 mb-1">KEYNOTE 1</span>
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-zinc-900 text-zinc-300 border border-zinc-700 mb-1">KEYNOTE 1</span>
                 <h3 class="text-base font-bold text-white group-hover:text-cyan-300 transition">Keynote Speaker 1</h3>
                 <p class="text-xs font-mono text-cyan-400">Announcing Soon</p>
                 <p class="text-xs text-slate-400">AI Systems & Architecture</p>
@@ -974,7 +988,7 @@
                 <img src="assets/speaker-placeholder.svg" alt="Keynote Speaker 2" class="w-full h-full object-cover" />
               </div>
               <div>
-                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-950/70 text-purple-300 border border-purple-800/40 mb-1">KEYNOTE 2</span>
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-zinc-900 text-zinc-300 border border-zinc-700 mb-1">KEYNOTE 2</span>
                 <h3 class="text-base font-bold text-white group-hover:text-purple-300 transition">Keynote Speaker 2</h3>
                 <p class="text-xs font-mono text-purple-400">Announcing Soon</p>
                 <p class="text-xs text-slate-400">Protocols & Open Standards</p>
@@ -1125,7 +1139,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div>
-          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-purple-400">Section 6</span>
+          <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#B6B0D0]">Section 6</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Ecosystem Partners & Sponsors</h2>
         </div>
         <p class="text-slate-400 text-sm max-w-xl mt-3 md:mt-0">
@@ -1230,30 +1244,31 @@
       </div>
 
       <!-- Sponsor Prospectus & Flyer Link Section -->
-      <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-purple-950/40 to-slate-900 border border-purple-500/30 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl shadow-purple-950/20">
+      <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-zinc-950 via-[#181520] to-zinc-950 border border-[#B6B0D0]/30 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl shadow-purple-950/20">
         <div class="space-y-2">
-          <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-purple-400 bg-purple-950/80 px-2.5 py-0.5 rounded border border-purple-800/40">
-            <i data-lucide="handshake" class="w-3.5 h-3.5"></i> EVENT SPONSORSHIP OPPORTUNITIES
+          <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#FF702D] bg-[#FF702D]/10 px-2.5 py-0.5 rounded border border-[#FF702D]/30">
+            <i data-lucide="handshake" class="w-3.5 h-3.5" aria-hidden="true"></i> EVENT SPONSORSHIP OPPORTUNITIES
           </div>
           <h3 class="text-xl sm:text-2xl font-bold text-white">Partner with Agentic AI Day Dallas</h3>
           <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
-            Connect directly with 400+ systems architects, engineering leaders, and practitioners deploying production agent networks. Collaborative sponsorships include Food & Hospitality (Breakfast, Lunch, Snacks), official AAIF Member Products & Swag (<a href="https://merch.aaif.io/collections/all" target="_blank" class="text-cyan-400 underline">merch.aaif.io</a>), and Hands-On Lab Infrastructure.
+            Connect directly with 400+ systems architects, engineering leaders, and practitioners deploying production agent networks. Collaborative sponsorships include Food & Hospitality (Breakfast, Lunch, Snacks), official AAIF Member Products & Swag (<a href="https://merch.aaif.io/collections/all" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline">merch.aaif.io<span class="sr-only"> (opens in new tab)</span></a>), and Hands-On Lab Infrastructure.
           </p>
           <div class="pt-1 flex items-center gap-2 text-xs text-cyan-300 font-mono">
             <span class="text-slate-400">View complete details & deliverables in the prospectus flyer:</span>
-            <a href="sponsor-flyer.html" class="underline hover:text-cyan-200 inline-flex items-center gap-1 font-semibold">
+            <a href="sponsor-flyer.html" class="underline hover:text-cyan-200 inline-flex items-center gap-1 font-semibold focus-visible:ring-2 focus-visible:ring-cyan-400">
               <span>sponsor-flyer.html</span>
-              <i data-lucide="external-link" class="w-3 h-3"></i>
+              <i data-lucide="external-link" class="w-3 h-3" aria-hidden="true"></i>
             </a>
           </div>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 shrink-0">
-          <a href="sponsor-flyer.html" target="_blank" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 shadow-lg shadow-cyan-500/20 transition">
-            <i data-lucide="file-text" class="w-4 h-4"></i>
+          <a href="sponsor-flyer.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm bg-[#FF702D] hover:bg-[#ff8548] text-black font-bold shadow-lg shadow-[#FF702D]/25 transition focus-visible:ring-2 focus-visible:ring-white">
+            <i data-lucide="file-text" class="w-4 h-4" aria-hidden="true"></i>
             <span>Open Sponsor Flyer (HTML / PDF)</span>
+            <span class="sr-only"> (opens in new tab)</span>
           </a>
-          <a href="mailto:npgovintarajan@gmail.com?subject=Agentic%20AI%20Day%20-%20Sponsorship%20Inquiry" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition">
-            <i data-lucide="mail" class="w-4 h-4 text-purple-400"></i>
+          <a href="mailto:npgovintarajan@gmail.com?subject=Agentic%20AI%20Day%20-%20Sponsorship%20Inquiry" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition focus-visible:ring-2 focus-visible:ring-purple-400">
+            <i data-lucide="mail" class="w-4 h-4 text-purple-400" aria-hidden="true"></i>
             <span>Inquire About Sponsorship</span>
           </a>
         </div>
@@ -1261,39 +1276,40 @@
 
     </div>
   </section>
+  </main>
 
   <!-- Community & Footer Section -->
-  <footer class="py-14 border-t border-slate-800/80 bg-[#05070d]">
+  <footer class="py-14 border-t border-slate-800/80 bg-[#000000]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800">
         <div class="flex items-center gap-3">
           <div class="h-10 px-2 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center">
-            <img src="assets/AAIF_Primary_Logo_White.svg" alt="AAIF Logo" class="h-7 w-auto object-contain" />
+            <img src="assets/AAIF_Primary_Logo_White.svg" alt="Agentic AI Foundation Logo" class="h-7 w-auto object-contain" />
           </div>
           <div>
-            <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 block font-semibold">AAIF Dallas Community</span>
+            <span class="text-xs font-mono uppercase tracking-wider text-[#B6B0D0] block font-semibold">AAIF Dallas Community</span>
             <span class="text-sm font-bold text-white">Agentic AI Day — Production Readiness</span>
           </div>
         </div>
 
-        <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400">
-          <a href="#overview" class="hover:text-white transition">Overview</a>
-          <span class="text-slate-700">•</span>
-          <a href="#schedule" class="hover:text-white transition">Schedule</a>
-          <span class="text-slate-700">•</span>
-          <a href="#sessions" class="hover:text-white transition">Technical Sessions</a>
-          <span class="text-slate-700">•</span>
-          <a href="#workshops" class="hover:text-white transition">Hands-On Labs</a>
-          <span class="text-slate-700">•</span>
-          <a href="#speakers" class="hover:text-white transition">Speakers</a>
-          <span class="text-slate-700">•</span>
-          <a href="#partners" class="hover:text-white transition">Partners & Sponsors</a>
-          <span class="text-slate-700">•</span>
-          <a href="sponsor-flyer.html" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition">Sponsor Flyer (PDF)</a>
-        </div>
+        <nav aria-label="Footer Navigation" class="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400">
+          <a href="#overview" class="hover:text-white transition focus-visible:ring-1 focus-visible:ring-cyan-400">Overview</a>
+          <span class="text-slate-600" aria-hidden="true">•</span>
+          <a href="#schedule" class="hover:text-white transition focus-visible:ring-1 focus-visible:ring-cyan-400">Schedule</a>
+          <span class="text-slate-600" aria-hidden="true">•</span>
+          <a href="#sessions" class="hover:text-white transition focus-visible:ring-1 focus-visible:ring-cyan-400">Technical Sessions</a>
+          <span class="text-slate-600" aria-hidden="true">•</span>
+          <a href="#workshops" class="hover:text-white transition focus-visible:ring-1 focus-visible:ring-cyan-400">Hands-On Labs</a>
+          <span class="text-slate-600" aria-hidden="true">•</span>
+          <a href="#speakers" class="hover:text-white transition focus-visible:ring-1 focus-visible:ring-cyan-400">Speakers</a>
+          <span class="text-slate-600" aria-hidden="true">•</span>
+          <a href="#partners" class="hover:text-white transition focus-visible:ring-1 focus-visible:ring-cyan-400">Partners & Sponsors</a>
+          <span class="text-slate-600" aria-hidden="true">•</span>
+          <a href="sponsor-flyer.html" target="_blank" rel="noopener noreferrer" class="text-[#FF702D] hover:text-[#ff8548] font-bold transition focus-visible:ring-1 focus-visible:ring-[#FF702D]">Sponsor Flyer (PDF)<span class="sr-only"> (opens in new tab)</span></a>
+        </nav>
       </div>
 
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
         <p>© AAIF Dallas Chapter. Artifacts, materials, and related resources for the local AI engineering community.</p>
         <p class="font-mono">Hosted on GitHub Pages • Generated for AAIF Community</p>
       </div>
