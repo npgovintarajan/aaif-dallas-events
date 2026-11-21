@@ -118,9 +118,14 @@
         <span>Back to Event Portal</span>
       </a>
       <span class="text-slate-700" aria-hidden="true">|</span>
-      <span class="text-xs text-slate-400 font-mono">Sponsorship Flyer • Jan 23, 2027</span>
+      <span class="text-xs text-zinc-300 font-mono">Sponsorship Flyer • Jan 23, 2027</span>
     </div>
     <div class="flex items-center gap-2.5">
+      <button onclick="document.documentElement.classList.toggle('high-contrast')" aria-label="Toggle High Contrast Display"
+        class="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700 transition focus-visible:ring-2 focus-visible:ring-white">
+        <i data-lucide="contrast" class="w-4 h-4 text-[#FF702D]" aria-hidden="true"></i>
+        <span class="hidden sm:inline">High Contrast</span>
+      </button>
       <button onclick="window.print()" aria-label="Print or Save Sponsorship Flyer as PDF"
         class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-[#FF702D] hover:bg-[#ff8548] text-black shadow-lg shadow-[#FF702D]/25 transition focus-visible:ring-2 focus-visible:ring-white">
         <i data-lucide="printer" class="w-4 h-4" aria-hidden="true"></i>
@@ -191,23 +196,23 @@
       <!-- Quick Key Stats -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5">
         <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
-          <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400">Date & Location</div>
+          <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-300">Date & Location</div>
           <div class="text-xs sm:text-sm font-bold text-white mt-0.5">Jan 23, 2027</div>
           <div class="text-[11px] text-cyan-400">Dallas, Texas</div>
         </div>
         <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
-          <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400">Expected Attendance</div>
+          <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-300">Expected Attendance</div>
           <div class="text-xs sm:text-sm font-bold text-white mt-0.5">400 Delegates</div>
           <div class="text-[11px] text-purple-400">Architects, Business Leaders,Senior AI Systems and Software
             Engineers, Cybersecurity Professionals</div>
         </div>
         <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
-          <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400">Structure</div>
+          <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-300">Structure</div>
           <div class="text-xs sm:text-sm font-bold text-white mt-0.5">Dual Afternoon Tracks</div>
           <div class="text-[11px] text-emerald-400">Auditorium + Coding Labs</div>
         </div>
         <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
-          <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400">Cooperation</div>
+          <div class="text-[10px] font-mono uppercase tracking-wider text-zinc-300">Cooperation</div>
           <div class="text-xs sm:text-sm font-bold text-white mt-0.5">IEEE & Academia</div>
           <div class="text-[11px] text-amber-400">Dallas, UTD & SMU</div>
         </div>
@@ -229,7 +234,7 @@
             <i data-lucide="target" class="w-4 h-4"></i>
           </div>
           <h3 class="text-xs font-bold text-white mb-1">Collaboration Opportunities: Direct Architect Access</h3>
-          <p class="text-[11px] text-slate-400 leading-relaxed">
+          <p class="text-[11px] text-zinc-300 leading-relaxed">
             Connect with technical buyers and principal architects actively deploying agent runtimes, LLM gateways, and
             production sandboxes.
           </p>
@@ -241,7 +246,7 @@
             <i data-lucide="code-2" class="w-4 h-4"></i>
           </div>
           <h3 class="text-xs font-bold text-white mb-1">Live Hands-On Lab Mindshare</h3>
-          <p class="text-[11px] text-slate-400 leading-relaxed">
+          <p class="text-[11px] text-zinc-300 leading-relaxed">
             Position your infrastructure, APIs, and tools directly within participant codebases during the Model Context
             Protocol (MCP) and A2A workshops.
           </p>
@@ -253,7 +258,7 @@
             <i data-lucide="award" class="w-4 h-4"></i>
           </div>
           <h3 class="text-xs font-bold text-white mb-1">Open Standards Leadership</h3>
-          <p class="text-[11px] text-slate-400 leading-relaxed">
+          <p class="text-[11px] text-zinc-300 leading-relaxed">
             Collaborate alongside IEEE Dallas Section, Agentic AI Foundation (AAIF.IO), and university chapters from UTD and SMU shaping next-gen agentic systems.
           </p>
         </div>
@@ -273,7 +278,7 @@
         <div class="p-4 rounded-xl bg-slate-900/50 border border-cyan-900/40">
           <div class="flex items-center justify-between mb-2">
             <span class="text-xs font-bold text-cyan-400 font-mono">TRACK A • AUDITORIUM</span>
-            <span class="text-[10px] text-slate-500 font-mono">Systems & Security</span>
+            <span class="text-[10px] text-zinc-400 font-mono">Systems & Security</span>
           </div>
           <ul class="space-y-1.5 text-xs text-slate-300">
             <li class="flex items-start gap-1.5">
@@ -299,7 +304,7 @@
         <div class="p-4 rounded-xl bg-slate-900/50 border border-emerald-900/40">
           <div class="flex items-center justify-between mb-2">
             <span class="text-xs font-bold text-emerald-400 font-mono">TRACK B • HANDS-ON LABS</span>
-            <span class="text-[10px] text-slate-500 font-mono">Code-First Protocols</span>
+            <span class="text-[10px] text-zinc-400 font-mono">Code-First Protocols</span>
           </div>
           <ul class="space-y-1.5 text-xs text-slate-300">
             <li class="flex items-start gap-1.5">
@@ -331,7 +336,7 @@
           <div class="w-1.5 h-4 bg-[#FF702D] rounded-full"></div>
           <h2 class="text-base sm:text-lg font-bold text-white font-mono uppercase tracking-wider">Sponsorship Opportunities</h2>
         </div>
-        <span class="text-[11px] font-mono text-slate-400">Collaborative & Hospitality Partnerships</span>
+        <span class="text-[11px] font-mono text-zinc-300">Collaborative & Hospitality Partnerships</span>
       </div>
 
       <!-- Food, Swag & Lab Cards -->
@@ -368,7 +373,7 @@
             </div>
             <h3 class="text-xs font-bold text-white mb-1.5">AAIF Member Products & Swag</h3>
             <p class="text-[11px] text-slate-300 leading-relaxed mb-2.5">
-              Sponsor official AAIF member apparel and products directly sourced from the official <a href="https://merch.aaif.io/collections/all" target="_blank" rel="noopener noreferrer" class="text-cyan-300 underline font-semibold focus-visible:ring-1 focus-visible:ring-[#FF702D]">AAIF Store<span class="sr-only"> (opens in new tab)</span></a> for all 400 delegates.
+              Sponsor official AAIF member apparel and products directly sourced from the official <a href="https://merch.aaif.io/collections/all" target="_blank" rel="noopener noreferrer" class="text-zinc-200 underline font-semibold focus-visible:ring-1 focus-visible:ring-[#FF702D]">AAIF Store<span class="sr-only"> (opens in new tab)</span></a> for all 400 delegates.
             </p>
             <ul class="text-[11px] space-y-1 text-slate-300 font-mono">
               <li class="flex items-center gap-1.5"><span class="text-cyan-400" aria-hidden="true">▸</span> <strong>Official Apparel:</strong> AAIF hoodies & tees</li>
@@ -376,7 +381,7 @@
               <li class="flex items-center gap-1.5"><span class="text-cyan-400" aria-hidden="true">▸</span> <strong>Store Link:</strong> <a href="https://merch.aaif.io/collections/all" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline focus-visible:ring-1 focus-visible:ring-[#FF702D]">merch.aaif.io/collections/all<span class="sr-only"> (opens in new tab)</span></a></li>
             </ul>
           </div>
-          <div class="mt-3 pt-2.5 border-t border-slate-800 text-[10px] text-cyan-300 font-mono">
+          <div class="mt-3 pt-2.5 border-t border-slate-800 text-[10px] text-zinc-200 font-mono">
             Logo alongside AAIF emblem on official event merch
           </div>
         </div>
@@ -398,7 +403,7 @@
               <li class="flex items-center gap-1.5"><span class="text-purple-400">▸</span> <strong>Code Repos:</strong> Attribution in GitHub lab guides</li>
             </ul>
           </div>
-          <div class="mt-3 pt-2.5 border-t border-slate-800 text-[10px] text-purple-300 font-mono">
+          <div class="mt-3 pt-2.5 border-t border-slate-800 text-[10px] text-[#B6B0D0] font-mono">
             Direct integration into Track B lab developer environments
           </div>
         </div>
@@ -407,62 +412,63 @@
 
       <!-- Detailed Breakdown Table -->
       <div class="overflow-x-auto">
-        <table class="w-full text-left text-xs border border-slate-800 rounded-xl overflow-hidden">
-          <thead class="bg-slate-900/90 text-slate-300 font-mono text-[11px] uppercase border-b border-slate-800">
+        <table class="w-full text-left text-xs border border-zinc-800 rounded-xl overflow-hidden" aria-label="Sponsorship Packages and Deliverables">
+          <caption class="sr-only">Detailed breakdown of sponsorship categories, deliverables, branding recognition, and collaboration opportunities for Agentic AI Day Dallas</caption>
+          <thead class="bg-zinc-900 text-zinc-200 font-mono text-[11px] uppercase border-b border-zinc-800">
             <tr>
-              <th class="p-3 font-bold">Sponsorship Category</th>
-              <th class="p-3 font-bold text-amber-400">Deliverables & Benefits</th>
-              <th class="p-3 font-bold text-cyan-400">Branding & Recognition</th>
-              <th class="p-3 font-bold text-purple-400">Collaboration Focus</th>
+              <th scope="col" class="p-3 font-bold text-white">Sponsorship Category</th>
+              <th scope="col" class="p-3 font-bold text-[#FF702D]">Deliverables & Benefits</th>
+              <th scope="col" class="p-3 font-bold text-[#B6B0D0]">Branding & Recognition</th>
+              <th scope="col" class="p-3 font-bold text-white">Collaboration Focus</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-800/80 text-slate-300 bg-slate-950/60">
             <tr>
-              <td class="p-3 font-semibold text-white">
+              <th scope="row" class="p-3 font-semibold text-white text-left font-normal">
                 <div class="font-bold text-white">Networking Lunch Sponsor</div>
                 <div class="text-[10px] text-amber-400 font-mono">Hospitality • Exclusive</div>
               </td>
               <td class="p-3 text-slate-300">Full catered buffet lunch for all 400 attendees, speakers, and organizers</td>
-              <td class="p-3 text-cyan-300">Primary banner in dining hall, branded table displays & luncheon stage remarks</td>
-              <td class="p-3 text-purple-300 font-mono text-[11px]">Direct architect access during lunch mixer</td>
+              <td class="p-3 text-zinc-200">Primary banner in dining hall, branded table displays & luncheon stage remarks</td>
+              <td class="p-3 text-[#B6B0D0] font-mono text-[11px]">Direct architect access during lunch mixer</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold text-white">
+              <th scope="row" class="p-3 font-semibold text-white text-left font-normal">
                 <div class="font-bold text-white">Breakfast & Morning Coffee Sponsor</div>
                 <div class="text-[10px] text-amber-400 font-mono">Hospitality • Morning Kickoff</div>
               </td>
               <td class="p-3 text-slate-300">Continental breakfast, fresh pastries, artisan coffee & tea bar</td>
-              <td class="p-3 text-cyan-300">Dedicated breakfast station signage, branded coffee sleeves & keynote welcome mention</td>
-              <td class="p-3 text-purple-300 font-mono text-[11px]">Morning networking with early-bird attendees</td>
+              <td class="p-3 text-zinc-200">Dedicated breakfast station signage, branded coffee sleeves & keynote welcome mention</td>
+              <td class="p-3 text-[#B6B0D0] font-mono text-[11px]">Morning networking with early-bird attendees</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold text-white">
+              <th scope="row" class="p-3 font-semibold text-white text-left font-normal">
                 <div class="font-bold text-white">Snacks & Coffee Refreshes Sponsor</div>
                 <div class="text-[10px] text-amber-400 font-mono">Hospitality • All-Day Refuel</div>
               </td>
               <td class="p-3 text-slate-300">Continuous specialty coffee refills, drinks & afternoon energy snacks during break times</td>
-              <td class="p-3 text-cyan-300">Prominent signage at all refreshment bars & afternoon break slide acknowledgment</td>
-              <td class="p-3 text-purple-300 font-mono text-[11px]">Continuous hallway track networking</td>
+              <td class="p-3 text-zinc-200">Prominent signage at all refreshment bars & afternoon break slide acknowledgment</td>
+              <td class="p-3 text-[#B6B0D0] font-mono text-[11px]">Continuous hallway track networking</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold text-white">
+              <th scope="row" class="p-3 font-semibold text-white text-left font-normal">
                 <div class="font-bold text-white">AAIF Member Products & Merch Sponsor</div>
                 <div class="text-[10px] text-cyan-400 font-mono">Official AAIF Member Products</div>
               </td>
               <td class="p-3 text-slate-300">
-                Official AAIF member apparel, hoodies, tees & developer bags from <a href="https://merch.aaif.io/collections/all" target="_blank" class="text-cyan-300 underline font-semibold">merch.aaif.io</a> distributed to 400 delegates
+                Official AAIF member apparel, hoodies, tees & developer bags from <a href="https://merch.aaif.io/collections/all" target="_blank" class="text-zinc-200 underline font-semibold">merch.aaif.io</a> distributed to 400 delegates
               </td>
-              <td class="p-3 text-cyan-300">Co-branded logo on official attendee apparel, event merchandise & bag badges</td>
-              <td class="p-3 text-purple-300 font-mono text-[11px]">Enduring post-event brand presence</td>
+              <td class="p-3 text-zinc-200">Co-branded logo on official attendee apparel, event merchandise & bag badges</td>
+              <td class="p-3 text-[#B6B0D0] font-mono text-[11px]">Enduring post-event brand presence</td>
             </tr>
             <tr>
-              <td class="p-3 font-semibold text-white">
+              <th scope="row" class="p-3 font-semibold text-white text-left font-normal">
                 <div class="font-bold text-white">Hands-On Lab & Tooling Co-Sponsor</div>
                 <div class="text-[10px] text-purple-400 font-mono">Track B Code Labs</div>
               </td>
               <td class="p-3 text-slate-300">Sandbox compute credits, API tokens & devcontainers for MCP and A2A hands-on coding labs</td>
-              <td class="p-3 text-cyan-300">Logo on GitHub lab repositories, devcontainer terminals & printed lab guides</td>
-              <td class="p-3 text-purple-300 font-mono text-[11px]">Developer mindshare in live codebases</td>
+              <td class="p-3 text-zinc-200">Logo on GitHub lab repositories, devcontainer terminals & printed lab guides</td>
+              <td class="p-3 text-[#B6B0D0] font-mono text-[11px]">Developer mindshare in live codebases</td>
             </tr>
           </tbody>
         </table>
@@ -471,7 +477,7 @@
 
     <!-- Partners & Academic Chapters Footer Grid -->
     <section class="pt-5 border-t border-slate-800/80 mb-6">
-      <div class="text-[11px] font-mono uppercase tracking-widest text-slate-400 mb-3 font-semibold">
+      <div class="text-[11px] font-mono uppercase tracking-widest text-zinc-300 mb-3 font-semibold">
         Organizing & Co-Sponsoring Ecosystem
       </div>
       <div class="flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-slate-300">
@@ -501,7 +507,7 @@
         <div class="text-xs font-mono font-bold text-cyan-400 uppercase">Sponsorship Inquiries & Prospectus</div>
         <div class="text-sm font-bold text-white mt-0.5">Contact the AAIF Dallas Organizing Committee</div>
         <div class="text-xs text-slate-300">Direct inquiries: <a href="mailto:npgovintarajan@gmail.com"
-            class="text-cyan-300 underline font-mono focus-visible:ring-1 focus-visible:ring-[#FF702D]">npgovintarajan@gmail.com</a></div>
+            class="text-zinc-200 underline font-mono focus-visible:ring-1 focus-visible:ring-[#FF702D]">npgovintarajan@gmail.com</a></div>
       </div>
       <div class="flex items-center gap-3 shrink-0">
         <a href="mailto:npgovintarajan@gmail.com?subject=Agentic%20AI%20Day%20Sponsorship%20Inquiry"

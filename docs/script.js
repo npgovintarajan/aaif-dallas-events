@@ -141,7 +141,40 @@ document.addEventListener('DOMContentLoaded', () => {
   if (initialActive) {
     updateAriaTabs(initialActive);
   }
+  // Restore saved high contrast preference
+  try {
+    if (localStorage.getItem('aaif-high-contrast') === 'true') {
+      document.documentElement.classList.add('high-contrast');
+      const contrastBtn = document.getElementById('toggle-contrast-btn');
+      if (contrastBtn) {
+        contrastBtn.setAttribute('aria-pressed', 'true');
+        contrastBtn.classList.add('border-[#FF702D]');
+      }
+    }
+  } catch (e) {}
 });
+
+// Toggle High Contrast Mode for Visually Impaired Users (WCAG 1.4.3 / 1.4.6 Enhanced Contrast)
+function toggleHighContrast() {
+  const isHighContrast = document.documentElement.classList.toggle('high-contrast');
+  const btn = document.getElementById('toggle-contrast-btn');
+  const liveStatus = document.getElementById('schedule-live-status');
+  
+  if (btn) {
+    btn.setAttribute('aria-pressed', isHighContrast ? 'true' : 'false');
+    btn.classList.toggle('border-[#FF702D]', isHighContrast);
+  }
+  
+  try {
+    localStorage.setItem('aaif-high-contrast', isHighContrast ? 'true' : 'false');
+  } catch (e) {}
+
+  if (liveStatus) {
+    liveStatus.textContent = isHighContrast 
+      ? 'High Contrast Mode enabled. Borders and contrast have been enhanced.' 
+      : 'High Contrast Mode disabled. Standard contrast restored.';
+  }
+}
 
 // Accessible copy snippet helper with screen reader announcement
 function copySnippet(elementId) {
@@ -153,7 +186,7 @@ function copySnippet(elementId) {
     const btn = event?.currentTarget;
     if (btn) {
       const originalHTML = btn.innerHTML;
-      btn.innerHTML = '<span class="text-emerald-400 font-bold" aria-live="polite">✓ Copied!</span>';
+      btn.innerHTML = '<span class="text-[#FF702D] font-bold" aria-live="polite">✓ Copied!</span>';
       setTimeout(() => {
         btn.innerHTML = originalHTML;
         if (window.lucide) lucide.createIcons();
