@@ -6,12 +6,12 @@ This repository contains event websites, materials, and run-of-show artifacts fo
 
 When deployed to GitHub Pages, the site can be accessed at:
 - **Root Portal**: `https://<username-or-org>.github.io/<repo>/` (auto-redirects to the latest event)
-- **Agentic AI Day Event Portal**: `https://<username-or-org>.github.io/<repo>/Agentic-AI-Day_27_Jan_2027/`
+- **Agentic AI Day Event Portal**: `https://<username-or-org>.github.io/<repo>/docs/`
 
 ### GitHub Pages Activation Steps
 1. Navigate to **Settings** > **Pages** in this GitHub repository.
 2. Under **Build and deployment** > **Source**, choose **Deploy from a branch**.
-3. Select branch: `main` (or `gh-pages`) and folder: `/ (root)`.
+3. Select branch: `main` (or `gh-pages`) and folder: `/docs` (or `/ (root)`).
 4. Click **Save**.
 
 ---
@@ -22,14 +22,16 @@ When deployed to GitHub Pages, the site can be accessed at:
 ├── .gitignore                                             # Standard OS, editor, node, and python ignores
 ├── .nojekyll                                              # Bypasses Jekyll processing on GitHub Pages
 ├── index.html                                             # Root gateway portal & auto-redirect
+├── sponsor-flyer.html                                     # Root sponsorship flyer
 ├── README.md                                              # Repository documentation & guide
 ├── assets/                                                # Vector logos and shared assets
 │   ├── AAIF_Primary_Logo_Black.svg
 │   ├── AAIF_Primary_Logo_White.svg
 │   ├── AAIF_Symbol_Black.svg
 │   └── AAIF_Symbol_White.svg
-└── Agentic-AI-Day_27_Jan_2027/                            # Dedicated folder for the January 27 Event
+└── docs/                                                  # Dedicated GitHub Pages deployment folder
     ├── index.html                                         # Full interactive event application
+    ├── sponsor-flyer.html                                 # Printable / PDF sponsorship prospectus
     ├── styles.css                                         # Event styling, glassmorphism, and print stylesheet
     ├── script.js                                          # Schedule filter tabs, search, and copy helpers
     ├── Agentic AI Day - Event Management & Run-of-Show Guide.md # Canonical run-of-show source guide
@@ -67,5 +69,5 @@ When deployed to GitHub Pages, the site can be accessed at:
    - Live schedule search allowing attendees to filter sessions by speaker or topic.
    - Community Call for Speakers & Lightning Talk proposal submissions.
 6. **Ecosystem Partners & Sponsors (IEEE Metrocon & Chainday Format)**:
-   - Technical co-sponsorship and academic partnership with IEEE Dallas Section, AAIF Global, UTD AI Society, IEEE UTD Student Chapter, and IEEE SMU Student Chapter.
+   - Technical co-sponsorship and academic partnership with IEEE Dallas Section, Agentic AI Foundation (AAIF.IO), UTD AI Society, IEEE UTD Student Chapter, and IEEE SMU Student Chapter.
    - Tiered sponsorship showcase (Platinum, Gold, Silver/Reception) and prospectus inquiries.
