@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
       tab.setAttribute('tabindex', isActive ? '0' : '-1');
 
       if (isActive) {
-        tab.classList.add('bg-[#FF702D]', 'text-black', 'font-bold');
-        tab.classList.remove('bg-zinc-900', 'text-zinc-300', 'bg-slate-800', 'text-slate-300');
+        tab.classList.add('bg-[#FF702D]', 'text-black', 'font-bold', 'border-[#FF702D]');
+        tab.classList.remove('bg-slate-100', 'text-slate-800', 'bg-zinc-900', 'text-zinc-300', 'bg-slate-800', 'text-slate-300');
       } else {
-        tab.classList.remove('bg-[#FF702D]', 'text-black', 'bg-cyan-500', 'text-slate-950');
-        tab.classList.add('bg-zinc-900', 'text-zinc-300');
+        tab.classList.remove('bg-[#FF702D]', 'text-black', 'border-[#FF702D]', 'bg-cyan-500', 'text-slate-950');
+        tab.classList.add('bg-slate-100', 'text-slate-800', 'border', 'border-slate-300');
       }
     });
   }
