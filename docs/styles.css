@@ -28,9 +28,19 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-p, h1, h2, h3, h4, span, li, a, button {
+p, h1, h2, h3, h4, li {
   overflow-wrap: break-word;
   word-wrap: break-word;
+}
+
+/* Ensure navigation bar and buttons never break mid-word */
+header, nav, header a, nav a, header button, .nav-link {
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-wrap: normal !important;
+  word-break: keep-all !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
 }
 
 /* WCAG 2.2 (2.4.13) Focus Not Obscured (Minimum): Prevents sticky header from obscuring focused items */
