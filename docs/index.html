@@ -1668,60 +1668,84 @@
             <span>Regional Community Supporters & Engineering User Groups</span>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
             <!-- Community 1: Dallas AI -->
-            <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-[#584F7C]/50 transition">
-              <div class="flex items-center gap-2 mb-2">
-                <i data-lucide="brain" class="w-4 h-4 text-[#584F7C]"></i>
-                <h4 class="text-sm font-bold text-slate-950">Dallas AI Community</h4>
+            <div class="p-4 rounded-xl bg-white border border-slate-300 shadow-sm hover:border-[#584F7C]/50 transition flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="brain" class="w-4 h-4 text-[#584F7C]"></i>
+                  <h4 class="text-sm font-bold text-slate-950">Dallas AI</h4>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  The largest AI practitioner community in North Texas with 7,000+ members exploring frontier LLMs, agent runtimes, and deep learning.
+                </p>
               </div>
-              <p class="text-xs text-slate-600 leading-relaxed">
-                The largest AI practitioner group in North Texas with 7,000+ members exploring LLMs, agent runtimes, and computer vision.
-              </p>
-              <div class="mt-3 pt-2 border-t border-slate-100 text-[10px] font-mono text-slate-500 font-semibold">
-                Community Partner
-              </div>
-            </div>
-
-            <!-- Community 2: DFW Multi-Agent & LLM User Group -->
-            <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-[#C93B00]/50 transition">
-              <div class="flex items-center gap-2 mb-2">
-                <i data-lucide="network" class="w-4 h-4 text-[#C93B00]"></i>
-                <h4 class="text-sm font-bold text-slate-950">DFW Multi-Agent & LLM</h4>
-              </div>
-              <p class="text-xs text-slate-600 leading-relaxed">
-                Engineering meetup focused on MCP servers, autonomous agent frameworks, LangGraph orchestration, and evaluation pipelines.
-              </p>
-              <div class="mt-3 pt-2 border-t border-slate-100 text-[10px] font-mono text-slate-500 font-semibold">
-                Special Interest Group (SIG)
+              <div class="mt-3 pt-2 border-t border-slate-100 text-[10px] font-mono text-slate-600 font-semibold">
+                AI Practitioner Community
               </div>
             </div>
 
-            <!-- Community 3: North Texas GenAI Builders -->
-            <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-emerald-500/50 transition">
-              <div class="flex items-center gap-2 mb-2">
-                <i data-lucide="code-2" class="w-4 h-4 text-emerald-700"></i>
-                <h4 class="text-sm font-bold text-slate-950">NTX GenAI Builders</h4>
+            <!-- Community 2: AWS User Group -->
+            <div class="p-4 rounded-xl bg-white border border-slate-300 shadow-sm hover:border-[#FF9900]/60 transition flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="cloud" class="w-4 h-4 text-amber-600"></i>
+                  <h4 class="text-sm font-bold text-slate-950">AWS User Group</h4>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  DFW cloud architects and systems engineers building serverless AI pipelines, Amazon Bedrock agents, and Firecracker microVM sandboxes.
+                </p>
               </div>
-              <p class="text-xs text-slate-600 leading-relaxed">
-                Hands-on hacker group building production prototypes, vector pipelines, local inference rigs, and micro-agents.
-              </p>
-              <div class="mt-3 pt-2 border-t border-slate-100 text-[10px] font-mono text-slate-500 font-semibold">
-                Developer Hacker Community
+              <div class="mt-3 pt-2 border-t border-slate-100 text-[10px] font-mono text-slate-600 font-semibold">
+                Cloud Architecture Group
               </div>
             </div>
 
-            <!-- Community 4: Women in AI North Texas -->
-            <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-purple-500/50 transition">
-              <div class="flex items-center gap-2 mb-2">
-                <i data-lucide="sparkles" class="w-4 h-4 text-purple-700"></i>
-                <h4 class="text-sm font-bold text-slate-950">Women in AI North Texas</h4>
+            <!-- Community 3: Google Developers Group -->
+            <div class="p-4 rounded-xl bg-white border border-slate-300 shadow-sm hover:border-blue-500/50 transition flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="code-2" class="w-4 h-4 text-blue-600"></i>
+                  <h4 class="text-sm font-bold text-slate-950">Google Developers Group</h4>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Regional GDG community building with Gemini models, Vertex AI multi-agent orchestration, and Google Cloud AI runtimes.
+                </p>
               </div>
-              <p class="text-xs text-slate-600 leading-relaxed">
-                Empowering female engineers, researchers, and technical founders in AI systems engineering, governance, and research.
-              </p>
-              <div class="mt-3 pt-2 border-t border-slate-100 text-[10px] font-mono text-slate-500 font-semibold">
-                Diversity & Leadership Partner
+              <div class="mt-3 pt-2 border-t border-slate-100 text-[10px] font-mono text-slate-600 font-semibold">
+                GDG Developer Community
+              </div>
+            </div>
+
+            <!-- Community 4: Microsoft User Group -->
+            <div class="p-4 rounded-xl bg-white border border-slate-300 shadow-sm hover:border-cyan-500/50 transition flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="terminal" class="w-4 h-4 text-cyan-700"></i>
+                  <h4 class="text-sm font-bold text-slate-950">Microsoft User Group</h4>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Enterprise developers deploying Azure OpenAI Service, Semantic Kernel, and AutoGen autonomous multi-agent systems.
+                </p>
+              </div>
+              <div class="mt-3 pt-2 border-t border-slate-100 text-[10px] font-mono text-slate-600 font-semibold">
+                Enterprise Tech User Group
+              </div>
+            </div>
+
+            <!-- Community 5: OpenAI Forum -->
+            <div class="p-4 rounded-xl bg-white border border-slate-300 shadow-sm hover:border-emerald-600/50 transition flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="sparkles" class="w-4 h-4 text-emerald-700"></i>
+                  <h4 class="text-sm font-bold text-slate-950">OpenAI Forum</h4>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Collaborative forum of AI researchers, developers, and technical founders building on OpenAI frontier models and agent APIs.
+                </p>
+              </div>
+              <div class="mt-3 pt-2 border-t border-slate-100 text-[10px] font-mono text-slate-600 font-semibold">
+                Frontier AI Builder Network
               </div>
             </div>
           </div>
