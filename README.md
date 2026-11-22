@@ -72,7 +72,12 @@ When deployed to GitHub Pages, the site can be accessed at:
    - Community Call for Speakers & Lightning Talk proposal submissions.
 6. **Ecosystem Partners & Sponsors (IEEE Metrocon & Chainday Format)**:
    - Technical co-sponsorship and academic partnership with IEEE Dallas Section, Agentic AI Foundation (AAIF.IO), UTD AI Society, IEEE UTD Student Chapter, and IEEE SMU Student Chapter.
-   - Collaborative sponsorship opportunities for Food & Hospitality (Breakfast, Lunch, Snacks), Official AAIF Member Products & Swag (merch.aaif.io), and Hands-on Lab infrastructure.
+   - Regional user groups: Dallas AI, DFW Multi-Agent & LLM User Group, NTX GenAI Builders, and Women in AI North Texas.
+   - Collaborative sponsorship packages for Food & Hospitality (Breakfast, Lunch, Snacks), Official AAIF Member Products & Swag (merch.aaif.io), Hands-on Lab infrastructure, and Audio/Visual Media Production (downstage confidence monitors, 4K multi-camera streaming, and on-site podcast studio setup).
+7. **Core Team, Committees & Advisory Board**:
+   - Organizing Leadership: General Chair (AAIF Dallas), IEEE Section Co-Chair, Technical Program Director, and Hands-On Labs Lead.
+   - Review Committees: Technical Program Committee (TPC), Lab Curriculum Committee, and Attendee Experience.
+   - Advisory Board: Faculty advisors from UT Dallas (UTD) & SMU, IEEE Region 5 Senior Fellows, and Fortune 500 AI Architecture Fellows.
 
 ## 🎨 Brand Guidelines & Theme
 

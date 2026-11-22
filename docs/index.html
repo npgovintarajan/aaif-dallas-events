@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth high-contrast">
 
 <head>
   <meta charset="UTF-8" />
@@ -65,26 +65,21 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="bg-[#fafafa] text-slate-900 font-sans antialiased selection:bg-[#FF702D] selection:text-black">
+<body class="bg-white text-slate-900 font-sans antialiased selection:bg-[#FF702D] selection:text-black">
   <!-- Skip to Main Content Link (WCAG 2.4.1) -->
   <a href="#main-content" class="sr-only focus:not-sr-only">
     Skip to main content
   </a>
 
-  <!-- Top Background Ambient Glow — AAIF Light Theme -->
+  <!-- Crisp Light Architectural Grid Background (No Blurs) -->
   <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10" aria-hidden="true">
-    <div
-      class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gradient-to-tr from-[#FF702D]/08 via-[#B6B0D0]/10 to-transparent blur-[140px] rounded-full">
-    </div>
-    <div class="absolute top-[800px] right-0 w-[500px] h-[450px] bg-[#FF702D]/05 blur-[130px] rounded-full"></div>
-    <div class="absolute top-[1800px] left-0 w-[600px] h-[500px] bg-[#B6B0D0]/06 blur-[140px] rounded-full"></div>
     <div
       class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f080_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f080_1px,transparent_1px)] bg-[size:32px_32px]">
     </div>
   </div>
 
   <!-- Navigation Bar -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/95 border-b border-slate-200/90 shadow-sm transition-all">
+  <header class="sticky top-0 z-50 bg-white border-b border-slate-300 shadow-sm transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3 sm:gap-4 lg:gap-6">
       <!-- AAIF Primary Logo on the Left Side -->
       <a href="#" class="flex items-center gap-2.5 sm:gap-3 group shrink-0" aria-label="Agentic AI Summit Home - AAIF Dallas Chapter">
@@ -149,6 +144,7 @@
 
         <a href="#speakers" class="nav-link whitespace-nowrap px-3 py-2 rounded-lg text-slate-700 hover:text-black hover:bg-slate-100 transition-colors">Speakers</a>
         <a href="#partners" class="nav-link whitespace-nowrap px-3 py-2 rounded-lg text-slate-700 hover:text-black hover:bg-slate-100 transition-colors">Partners & Sponsors</a>
+        <a href="#team" class="nav-link whitespace-nowrap px-3 py-2 rounded-lg text-slate-700 hover:text-black hover:bg-slate-100 transition-colors">Team & Advisors</a>
       </nav>
 
       <!-- Right Side: IEEE Logo + Run of Show CTA (Print/PDF Removed) -->
@@ -177,9 +173,9 @@
       </div>
     </div>
 
-    <!-- Mobile Navigation Menu -->
+    <!-- Mobile Navigation Menu (No Blurs) -->
     <nav id="mobile-nav" aria-label="Mobile Navigation"
-      class="hidden lg:hidden border-t border-slate-200 bg-white/98 backdrop-blur-xl px-4 py-3 space-y-1 shadow-lg transition-all">
+      class="hidden lg:hidden border-t border-slate-300 bg-white px-4 py-3 space-y-1 shadow-xl transition-all">
       <a href="#overview" onclick="closeMobileMenu()"
         class="block px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:text-black hover:bg-slate-100 transition">Overview</a>
 
@@ -204,22 +200,24 @@
         class="block px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:text-black hover:bg-slate-100 transition">Speakers</a>
       <a href="#partners" onclick="closeMobileMenu()"
         class="block px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:text-black hover:bg-slate-100 transition">Partners & Sponsors</a>
+      <a href="#team" onclick="closeMobileMenu()"
+        class="block px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:text-black hover:bg-slate-100 transition">Core Team & Advisors</a>
       <a href="sponsor-flyer.html" target="_blank" rel="noopener noreferrer"
         class="block px-3.5 py-2.5 rounded-lg text-sm font-bold text-[#C93B00] hover:bg-orange-50 transition">Sponsor Prospectus Flyer ↗</a>
 
-      <!-- High Contrast Accessibility Mode at the Bottom of Menu -->
+      <!-- High Contrast Accessibility Mode at the Bottom of Menu (Default Active) -->
       <div class="pt-3 mt-2 border-t border-slate-200 flex items-center justify-between px-3">
         <div class="flex items-center gap-2">
           <i data-lucide="contrast" class="w-4 h-4 text-[#C93B00]" aria-hidden="true"></i>
           <div>
             <div class="text-xs font-bold text-slate-900">Contrast Mode</div>
-            <div class="text-[10px] text-slate-500">WCAG 2.2 AA / AAA</div>
+            <div class="text-[10px] text-slate-500">WCAG 2.2 AA / AAA Active</div>
           </div>
         </div>
         <button id="toggle-contrast-btn-mobile" onclick="toggleHighContrast()"
-          class="contrast-toggle-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition"
+          class="contrast-toggle-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border-2 border-[#FF702D] transition"
           title="Toggle Enhanced High Contrast Mode" aria-label="Toggle Enhanced High Contrast Mode"
-          aria-pressed="false">
+          aria-pressed="true">
           <span>Toggle Mode</span>
         </button>
       </div>
@@ -1804,6 +1802,236 @@
 
       </div>
     </section>
+
+    <!-- Section 7: Core Team, Committees & Advisors -->
+    <section id="team" class="py-16 border-t border-slate-300 bg-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+          <div>
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#C93B00]">Section 7</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 mt-1">Core Team, Committees & Advisors</h2>
+          </div>
+          <p class="text-slate-700 text-sm max-w-xl mt-3 md:mt-0 font-medium">
+            Dedicated volunteer organizers, technical program reviewers, and distinguished advisors guiding the inaugural Agentic AI Summit Dallas.
+          </p>
+        </div>
+
+        <div class="space-y-12">
+          
+          <!-- Subsection 1: Core Organizing Leadership -->
+          <div>
+            <div class="flex items-center gap-2 mb-6">
+              <div class="w-2.5 h-2.5 rounded-full bg-[#FF702D]" aria-hidden="true"></div>
+              <h3 class="text-lg font-bold text-slate-950 font-mono uppercase tracking-wider">Core Organizing Team</h3>
+              <span class="text-xs font-mono text-slate-600 ml-auto font-semibold">Leadership & Event Operations</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <!-- Member 1 -->
+              <div class="p-5 rounded-2xl bg-white border border-slate-300 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="text-[11px] font-mono uppercase tracking-wider text-[#C93B00] font-bold mb-1">General Chair & Founder</div>
+                  <h4 class="text-base font-extrabold text-slate-950">Govindaraj Palanisamy</h4>
+                  <div class="text-xs text-slate-600 font-medium mb-3">AAIF Dallas Community Chapter Lead</div>
+                  <p class="text-xs text-slate-700 leading-relaxed">
+                    Directing summit strategy, multi-agent curriculum alignment, community partnerships, and industry sponsorship execution.
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-mono text-slate-600">
+                  <span>Steering Lead</span>
+                  <span class="text-[#FF702D] font-bold">AAIF Dallas</span>
+                </div>
+              </div>
+
+              <!-- Member 2 -->
+              <div class="p-5 rounded-2xl bg-white border border-slate-300 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="text-[11px] font-mono uppercase tracking-wider text-[#00629B] font-bold mb-1">IEEE Section Co-Chair</div>
+                  <h4 class="text-base font-extrabold text-slate-950">IEEE Dallas Section Leadership</h4>
+                  <div class="text-xs text-slate-600 font-medium mb-3">Technical Co-Sponsor & Member Outreach</div>
+                  <p class="text-xs text-slate-700 leading-relaxed">
+                    Overseeing IEEE technical co-sponsorship governance, continuing education credits, professional ethics, and student chapter participation.
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-mono text-slate-600">
+                  <span>Co-Sponsorship</span>
+                  <span class="text-[#00629B] font-bold">IEEE Region 5</span>
+                </div>
+              </div>
+
+              <!-- Member 3 -->
+              <div class="p-5 rounded-2xl bg-white border border-slate-300 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="text-[11px] font-mono uppercase tracking-wider text-[#584F7C] font-bold mb-1">Technical Program Director</div>
+                  <h4 class="text-base font-extrabold text-slate-950">Systems Architecture Lead</h4>
+                  <div class="text-xs text-slate-600 font-medium mb-3">Enterprise AI & Distributed Systems</div>
+                  <p class="text-xs text-slate-700 leading-relaxed">
+                    Curating plenary keynotes, Track A systems architecture papers, MicroVM isolation demos, and production run-of-show synchronization.
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-mono text-slate-600">
+                  <span>Track A Lead</span>
+                  <span class="text-[#584F7C] font-bold">Technical Steering</span>
+                </div>
+              </div>
+
+              <!-- Member 4 -->
+              <div class="p-5 rounded-2xl bg-white border border-slate-300 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="text-[11px] font-mono uppercase tracking-wider text-emerald-800 font-bold mb-1">Hands-On Labs & Ops Lead</div>
+                  <h4 class="text-base font-extrabold text-slate-950">Lab Infrastructure Committee</h4>
+                  <div class="text-xs text-slate-600 font-medium mb-3">Developer Sandboxes & Tooling</div>
+                  <p class="text-xs text-slate-700 leading-relaxed">
+                    Managing devcontainer environments, cloud compute credits, MCP server testbeds, API key distribution, and attendee technical setup.
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-mono text-slate-600">
+                  <span>Track B Lead</span>
+                  <span class="text-emerald-800 font-bold">Hands-On Labs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subsection 2: Technical Program & Review Committees -->
+          <div>
+            <div class="flex items-center gap-2 mb-6">
+              <div class="w-2.5 h-2.5 rounded-full bg-[#584F7C]" aria-hidden="true"></div>
+              <h3 class="text-lg font-bold text-slate-950 font-mono uppercase tracking-wider">Committees & Review Boards</h3>
+              <span class="text-xs font-mono text-slate-600 ml-auto font-semibold">Peer Review & Quality Evaluation</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <!-- Committee 1 -->
+              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-300">
+                <div class="flex items-center gap-2 text-slate-900 font-bold text-sm mb-2">
+                  <i data-lucide="file-check" class="w-4 h-4 text-[#C93B00]"></i>
+                  <h4>Technical Program Committee (TPC)</h4>
+                </div>
+                <p class="text-xs text-slate-700 leading-relaxed mb-3">
+                  Responsible for speaker selection, abstract peer review, and vetting case studies for technical rigor and real production evidence:
+                </p>
+                <ul class="text-xs text-slate-800 space-y-1.5 font-mono">
+                  <li class="flex items-center gap-1.5"><span class="text-[#FF702D]">▸</span> Multi-Agent Protocols & A2A Evaluation</li>
+                  <li class="flex items-center gap-1.5"><span class="text-[#FF702D]">▸</span> MCP Tool Poisoning & Security Verification</li>
+                  <li class="flex items-center gap-1.5"><span class="text-[#FF702D]">▸</span> MicroVM Sandboxing & Memory Safety</li>
+                  <li class="flex items-center gap-1.5"><span class="text-[#FF702D]">▸</span> Durable Orchestration & State Machine Design</li>
+                </ul>
+              </div>
+
+              <!-- Committee 2 -->
+              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-300">
+                <div class="flex items-center gap-2 text-slate-900 font-bold text-sm mb-2">
+                  <i data-lucide="terminal" class="w-4 h-4 text-[#584F7C]"></i>
+                  <h4>Hands-On Lab Curriculum Committee</h4>
+                </div>
+                <p class="text-xs text-slate-700 leading-relaxed mb-3">
+                  Architecting reproducible coding exercises, participant workbooks, and self-contained devcontainers for live interactive labs:
+                </p>
+                <ul class="text-xs text-slate-800 space-y-1.5 font-mono">
+                  <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> Python & TypeScript MCP Server SDKs</li>
+                  <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> SSE Transport & Authentication Blueprints</li>
+                  <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> GitHub Codespaces & Devcontainer Manifests</li>
+                  <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> Automated Evaluation & OpenTelemetry Tracing</li>
+                </ul>
+              </div>
+
+              <!-- Committee 3 -->
+              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-300">
+                <div class="flex items-center gap-2 text-slate-900 font-bold text-sm mb-2">
+                  <i data-lucide="users" class="w-4 h-4 text-emerald-800"></i>
+                  <h4>Community & Attendee Experience Committee</h4>
+                </div>
+                <p class="text-xs text-slate-700 leading-relaxed mb-3">
+                  Ensuring seamless attendee hospitality, diversity initiatives, audio/visual broadcast quality, and student mentoring:
+                </p>
+                <ul class="text-xs text-slate-800 space-y-1.5 font-mono">
+                  <li class="flex items-center gap-1.5"><span class="text-emerald-800">▸</span> AV Production, Confidence Monitors & Stream</li>
+                  <li class="flex items-center gap-1.5"><span class="text-emerald-800">▸</span> On-Site Podcast Studio Lounge Operations</li>
+                  <li class="flex items-center gap-1.5"><span class="text-emerald-800">▸</span> Student Chapter & Mentorship Coordination</li>
+                  <li class="flex items-center gap-1.5"><span class="text-emerald-800">▸</span> Full WCAG 2.2 Accessibility Compliance</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subsection 3: Advisory Board & Academic Advisors -->
+          <div>
+            <div class="flex items-center gap-2 mb-6">
+              <div class="w-2.5 h-2.5 rounded-full bg-[#00629B]" aria-hidden="true"></div>
+              <h3 class="text-lg font-bold text-slate-950 font-mono uppercase tracking-wider">Advisory Board & Academic Advisors</h3>
+              <span class="text-xs font-mono text-slate-600 ml-auto font-semibold">Strategic Industry & University Guidance</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <!-- Advisor 1: Academic Advisor UTD -->
+              <div class="p-5 rounded-2xl bg-white border border-slate-300 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="text-[11px] font-mono uppercase tracking-wider text-emerald-800 font-bold mb-1">Academic Advisor • UT Dallas</div>
+                  <h4 class="text-sm font-extrabold text-slate-950">University of Texas at Dallas</h4>
+                  <div class="text-xs text-slate-600 font-medium mb-2">Department of Computer Science</div>
+                  <p class="text-xs text-slate-700 leading-relaxed">
+                    Advising on autonomous multi-agent research curricula, student researcher grants, and university lab collaboration.
+                  </p>
+                </div>
+                <div class="mt-3 pt-2.5 border-t border-slate-200 text-[11px] font-mono text-emerald-800 font-semibold">
+                  UTD AI Society Faculty Liaison
+                </div>
+              </div>
+
+              <!-- Advisor 2: Academic Advisor SMU -->
+              <div class="p-5 rounded-2xl bg-white border border-slate-300 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="text-[11px] font-mono uppercase tracking-wider text-blue-800 font-bold mb-1">Academic Advisor • SMU</div>
+                  <h4 class="text-sm font-extrabold text-slate-950">Southern Methodist University</h4>
+                  <div class="text-xs text-slate-600 font-medium mb-2">Lyle School of Engineering</div>
+                  <p class="text-xs text-slate-700 leading-relaxed">
+                    Guiding engineering leadership tracks, graduate student participation, and AI safety ethics frameworks.
+                  </p>
+                </div>
+                <div class="mt-3 pt-2.5 border-t border-slate-200 text-[11px] font-mono text-blue-800 font-semibold">
+                  IEEE SMU Branch Advisor
+                </div>
+              </div>
+
+              <!-- Advisor 3: IEEE Standards & Ethics Advisor -->
+              <div class="p-5 rounded-2xl bg-white border border-slate-300 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="text-[11px] font-mono uppercase tracking-wider text-[#00629B] font-bold mb-1">IEEE Senior Advisor</div>
+                  <h4 class="text-sm font-extrabold text-slate-950">IEEE Dallas Section & Computer Society</h4>
+                  <div class="text-xs text-slate-600 font-medium mb-2">Regional Engineering Standards</div>
+                  <p class="text-xs text-slate-700 leading-relaxed">
+                    Providing counsel on IEEE professional development standards, technical co-sponsorship criteria, and conference archival practices.
+                  </p>
+                </div>
+                <div class="mt-3 pt-2.5 border-t border-slate-200 text-[11px] font-mono text-[#00629B] font-semibold">
+                  IEEE Senior Member Fellow
+                </div>
+              </div>
+
+              <!-- Advisor 4: Enterprise AI Architecture Advisor -->
+              <div class="p-5 rounded-2xl bg-white border border-slate-300 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="text-[11px] font-mono uppercase tracking-wider text-[#C93B00] font-bold mb-1">Enterprise Architecture Advisor</div>
+                  <h4 class="text-sm font-extrabold text-slate-950">Industry Advisory Council</h4>
+                  <div class="text-xs text-slate-600 font-medium mb-2">Fortune 500 AI Architecture Fellows</div>
+                  <p class="text-xs text-slate-700 leading-relaxed">
+                    Reviewing real-world enterprise deployability, SOC2 / HIPAA compliance in sandboxes, and enterprise scale latency budgets.
+                  </p>
+                </div>
+                <div class="mt-3 pt-2.5 border-t border-slate-200 text-[11px] font-mono text-slate-700 font-semibold">
+                  Enterprise Advisory Council
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
   </main>
 
   <!-- Community & Footer Section -->
@@ -1849,6 +2077,10 @@
             class="hover:text-black transition focus-visible:ring-1 focus-visible:ring-[#FF702D]">Partners &
             Sponsors</a>
           <span class="text-slate-400" aria-hidden="true">•</span>
+          <a href="#team"
+            class="hover:text-black transition focus-visible:ring-1 focus-visible:ring-[#FF702D]">Team &
+            Advisors</a>
+          <span class="text-slate-400" aria-hidden="true">•</span>
           <a href="sponsor-flyer.html" target="_blank" rel="noopener noreferrer"
             class="text-[#C93B00] hover:text-[#ff8548] font-bold transition focus-visible:ring-1 focus-visible:ring-[#FF702D]">Sponsor
             Flyer (PDF)<span class="sr-only"> (opens in new tab)</span></a>
@@ -1863,12 +2095,12 @@
     </div>
   </footer>
 
-  <!-- Floating Bottom Accessibility Contrast Mode Widget (WCAG 2.2 Level AA/AAA) -->
+  <!-- Floating Bottom Accessibility Contrast Mode Widget (WCAG 2.2 Level AA/AAA - Default Active) -->
   <aside aria-label="Accessibility tools" class="fixed bottom-5 right-5 z-40 hidden sm:block">
     <button id="floating-contrast-btn" onclick="toggleHighContrast()"
-      class="contrast-toggle-btn inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-bold bg-white/95 backdrop-blur-md text-slate-800 border border-slate-300 shadow-lg hover:border-[#FF702D] hover:bg-slate-50 transition-all focus-visible:ring-2 focus-visible:ring-[#FF702D]"
-      title="Toggle Enhanced High Contrast Mode" aria-label="Toggle Enhanced High Contrast Mode"
-      aria-pressed="false">
+      class="contrast-toggle-btn inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-bold bg-white text-slate-900 border-2 border-[#FF702D] shadow-xl hover:bg-slate-50 transition-all focus-visible:ring-2 focus-visible:ring-[#FF702D]"
+      title="Toggle Contrast Mode (Currently High Contrast)" aria-label="Toggle Contrast Mode (Currently High Contrast)"
+      aria-pressed="true">
       <i data-lucide="contrast" class="w-3.5 h-3.5 text-[#C93B00]" aria-hidden="true"></i>
       <span>Contrast Mode</span>
     </button>

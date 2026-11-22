@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="high-contrast">
 
 <head>
   <meta charset="UTF-8" />
@@ -108,9 +108,9 @@
     Skip to flyer content
   </a>
 
-  <!-- Top Action Bar (Screen Only) -->
+  <!-- Top Action Bar (Screen Only - No Blurs) -->
   <nav aria-label="Page tools"
-    class="no-print max-w-4xl mx-auto mb-6 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 bg-white/95 border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-sm backdrop-blur-md sticky top-4 z-50">
+    class="no-print max-w-4xl mx-auto mb-6 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 bg-white border border-slate-300 p-3 sm:p-4 rounded-2xl shadow-sm sticky top-4 z-50">
     <div class="flex items-center gap-2 sm:gap-3 shrink-0">
       <a href="index.html"
         class="text-xs font-mono text-[#C93B00] hover:text-[#e85b1a] font-bold flex items-center gap-1.5 transition focus-visible:ring-2 focus-visible:ring-[#FF702D] rounded-lg px-2.5 py-1.5 bg-orange-50 border border-orange-200">
@@ -141,11 +141,7 @@
 
   <!-- Flyer Main Document Container (Letter / A4 Optimized) -->
   <main id="flyer-main"
-    class="print-page max-w-4xl mx-auto bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
-
-    <!-- Background Glow Effects -->
-    <div class="absolute -top-32 -left-32 w-80 h-80 bg-[#FF702D]/06 blur-[100px] rounded-full pointer-events-none" aria-hidden="true"></div>
-    <div class="absolute top-96 -right-32 w-80 h-80 bg-[#B6B0D0]/08 blur-[100px] rounded-full pointer-events-none" aria-hidden="true"></div>
+    class="print-page max-w-4xl mx-auto bg-white border border-slate-300 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
 
     <!-- Header & Event Identity -->
     <header class="relative pb-6 border-b border-slate-200 mb-6">
@@ -510,62 +506,77 @@
       </div>
     </section>
 
-    <!-- Core Team, Community Supporters & User Groups Ecosystem -->
+    <!-- Core Team, Committees, Advisors & Community Ecosystem -->
     <section class="pt-5 border-t border-slate-200/80 mb-6 space-y-4">
       <div class="flex items-center justify-between">
         <div class="text-[11px] font-mono uppercase tracking-widest text-slate-900 font-bold">
-          Organizing Ecosystem, Community Supporters & User Groups
+          Core Team, Committees, Advisors & Community Ecosystem
         </div>
-        <span class="text-[10px] font-mono text-slate-500 font-semibold">DFW AI Collaborative Network</span>
+        <span class="text-[10px] font-mono text-slate-500 font-semibold">Governance & Leadership</span>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-        <!-- Core Team -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+        <!-- 1. Core Organizing Team -->
         <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
           <div class="flex items-center gap-1.5 text-[#C93B00] font-bold text-[11px] font-mono uppercase mb-1.5">
             <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-            <span>Core Organizing Team</span>
+            <span>Core Team</span>
           </div>
           <p class="text-[11px] text-slate-600 leading-relaxed mb-2">
-            Steering committee, technical program chairs, lab architects & volunteer operations:
+            Steering committee, executive chairs & event operations:
           </p>
           <ul class="text-[11px] text-slate-800 space-y-1 font-mono font-medium">
-            <li class="flex items-center gap-1.5"><span class="text-[#FF702D]">▸</span> <strong>AAIF Dallas:</strong> Chapter Leadership & Ops</li>
-            <li class="flex items-center gap-1.5"><span class="text-[#00629B]">▸</span> <strong>IEEE Dallas:</strong> Section Executive Committee</li>
-            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>Program Committee:</strong> Track A & B Leads</li>
+            <li class="flex items-center gap-1.5"><span class="text-[#FF702D]">▸</span> <strong>Govindaraj P.:</strong> General Chair (AAIF)</li>
+            <li class="flex items-center gap-1.5"><span class="text-[#00629B]">▸</span> <strong>IEEE Dallas:</strong> Section Co-Chair</li>
+            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>Tech Ops:</strong> Track A & B Leads</li>
           </ul>
         </div>
 
-        <!-- Community Supporters & User Groups -->
+        <!-- 2. Committees & Review -->
         <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
           <div class="flex items-center gap-1.5 text-[#584F7C] font-bold text-[11px] font-mono uppercase mb-1.5">
-            <i data-lucide="users" class="w-3.5 h-3.5"></i>
-            <span>Community & User Groups</span>
+            <i data-lucide="file-check" class="w-3.5 h-3.5"></i>
+            <span>Committees</span>
           </div>
           <p class="text-[11px] text-slate-600 leading-relaxed mb-2">
-            Active regional practitioner forums and engineering meetups across North Texas:
+            Technical Program Committee & curriculum design:
           </p>
           <ul class="text-[11px] text-slate-800 space-y-1 font-mono font-medium">
-            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>Dallas AI Community</strong></li>
-            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>DFW Multi-Agent & LLM User Group</strong></li>
-            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>North Texas GenAI Builders</strong></li>
-            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>Women in AI North Texas</strong></li>
+            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>TPC:</strong> Architecture & Security</li>
+            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>Lab Committee:</strong> MCP Devcontainers</li>
+            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>AV & Media:</strong> Broadcast & Podcast</li>
           </ul>
         </div>
 
-        <!-- Academic & Student Chapters -->
+        <!-- 3. Advisors & Academia -->
         <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-          <div class="flex items-center gap-1.5 text-emerald-800 font-bold text-[11px] font-mono uppercase mb-1.5">
-            <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
-            <span>Academic & Student Chapters</span>
+          <div class="flex items-center gap-1.5 text-[#00629B] font-bold text-[11px] font-mono uppercase mb-1.5">
+            <i data-lucide="award" class="w-3.5 h-3.5"></i>
+            <span>Advisors</span>
           </div>
           <p class="text-[11px] text-slate-600 leading-relaxed mb-2">
-            Fostering research, hackathons, and next-generation student talent pipelines:
+            Academic councils & enterprise architecture fellows:
           </p>
           <ul class="text-[11px] text-slate-800 space-y-1 font-mono font-medium">
-            <li class="flex items-center gap-1.5"><span class="text-emerald-700">▸</span> <strong>UTD AI Society</strong> (UT Dallas)</li>
-            <li class="flex items-center gap-1.5"><span class="text-blue-700">▸</span> <strong>IEEE UTD</strong> Student Branch</li>
-            <li class="flex items-center gap-1.5"><span class="text-blue-700">▸</span> <strong>IEEE SMU</strong> Student Branch</li>
+            <li class="flex items-center gap-1.5"><span class="text-[#00629B]">▸</span> <strong>UTD:</strong> CS Faculty Advisory Liaison</li>
+            <li class="flex items-center gap-1.5"><span class="text-[#00629B]">▸</span> <strong>SMU:</strong> Lyle Engineering Advisor</li>
+            <li class="flex items-center gap-1.5"><span class="text-[#00629B]">▸</span> <strong>Industry:</strong> Enterprise AI Fellows</li>
+          </ul>
+        </div>
+
+        <!-- 4. Community & User Groups -->
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="flex items-center gap-1.5 text-emerald-800 font-bold text-[11px] font-mono uppercase mb-1.5">
+            <i data-lucide="users" class="w-3.5 h-3.5"></i>
+            <span>Community & Groups</span>
+          </div>
+          <p class="text-[11px] text-slate-600 leading-relaxed mb-2">
+            Regional user groups & student branch networks:
+          </p>
+          <ul class="text-[11px] text-slate-800 space-y-1 font-mono font-medium">
+            <li class="flex items-center gap-1.5"><span class="text-emerald-700">▸</span> <strong>Dallas AI Community</strong> (7k+ members)</li>
+            <li class="flex items-center gap-1.5"><span class="text-emerald-700">▸</span> <strong>DFW Multi-Agent & LLM</strong></li>
+            <li class="flex items-center gap-1.5"><span class="text-emerald-700">▸</span> <strong>UTD & SMU</strong> Student Branches</li>
           </ul>
         </div>
       </div>

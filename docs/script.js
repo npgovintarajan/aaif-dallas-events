@@ -141,13 +141,21 @@ document.addEventListener('DOMContentLoaded', () => {
   if (initialActive) {
     updateAriaTabs(initialActive);
   }
-  // Restore saved high contrast preference
+  // Default view is High Contrast Mode (WCAG 2.2 AAA Compliance)
   try {
-    if (localStorage.getItem('aaif-high-contrast') === 'true') {
+    const savedPreference = localStorage.getItem('aaif-high-contrast');
+    const isHighContrast = savedPreference !== 'false';
+    if (isHighContrast) {
       document.documentElement.classList.add('high-contrast');
       document.querySelectorAll('.contrast-toggle-btn, #toggle-contrast-btn, #toggle-contrast-btn-mobile, #floating-contrast-btn').forEach(btn => {
         btn.setAttribute('aria-pressed', 'true');
         btn.classList.add('border-[#FF702D]');
+      });
+    } else {
+      document.documentElement.classList.remove('high-contrast');
+      document.querySelectorAll('.contrast-toggle-btn, #toggle-contrast-btn, #toggle-contrast-btn-mobile, #floating-contrast-btn').forEach(btn => {
+        btn.setAttribute('aria-pressed', 'false');
+        btn.classList.remove('border-[#FF702D]');
       });
     }
   } catch (e) {}
