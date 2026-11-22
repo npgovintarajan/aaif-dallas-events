@@ -6,7 +6,7 @@ This repository contains event websites, materials, and run-of-show artifacts fo
 
 When deployed to GitHub Pages, the site can be accessed at:
 - **Root Portal**: `https://<username-or-org>.github.io/<repo>/` (auto-redirects to the latest event)
-- **Agentic AI Day Event Portal**: `https://<username-or-org>.github.io/<repo>/docs/`
+- **Agentic AI Summit Event Portal**: `https://<username-or-org>.github.io/<repo>/docs/` (or custom domain `https://aaif-dallas.gpairesearch.com`)
 
 ### GitHub Pages Activation Steps
 1. Navigate to **Settings** > **Pages** in this GitHub repository.
@@ -28,23 +28,25 @@ When deployed to GitHub Pages, the site can be accessed at:
 │   ├── AAIF_Primary_Logo_Black.svg
 │   ├── AAIF_Primary_Logo_White.svg
 │   ├── AAIF_Symbol_Black.svg
-│   └── AAIF_Symbol_White.svg
+│   ├── AAIF_Symbol_White.svg
+│   └── IEEE_Logo.svg
 └── docs/                                                  # Dedicated GitHub Pages deployment folder
-    ├── index.html                                         # Full interactive event application
+    ├── CNAME                                              # Custom domain config (aaif-dallas.gpairesearch.com)
+    ├── index.html                                         # Full interactive event application (Agentic AI Summit)
     ├── sponsor-flyer.html                                 # Printable / PDF sponsorship prospectus
     ├── styles.css                                         # Event styling, glassmorphism, and print stylesheet
     ├── script.js                                          # Schedule filter tabs, search, and copy helpers
-    ├── Agentic AI Day - Event Management & Run-of-Show Guide.md # Canonical run-of-show source guide
     └── assets/                                            # Event-specific asset bundle
         ├── AAIF_Primary_Logo_Black.svg
         ├── AAIF_Primary_Logo_White.svg
         ├── AAIF_Symbol_Black.svg
-        └── AAIF_Symbol_White.svg
+        ├── AAIF_Symbol_White.svg
+        └── IEEE_Logo.svg
 ```
 
 ---
 
-## 📋 Included Sections in Agentic AI Day (January 23, 2027)
+## 📋 Included Sections in Agentic AI Summit (January 23, 2027)
 
 1. **Executive Overview & Objectives**: Bridging the gap between conceptual LLM wrappers and enterprise production-grade multi-agent clusters.
 2. **Interactive Run-of-Show Schedule**:

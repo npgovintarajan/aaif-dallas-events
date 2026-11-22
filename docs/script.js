@@ -1,4 +1,4 @@
-// Agentic AI Day Interactive Features with WCAG 2.2 Accessibility
+// Agentic AI Summit Interactive Features with WCAG 2.2 Accessibility
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize Lucide Icons & add aria-hidden to decorative icons
