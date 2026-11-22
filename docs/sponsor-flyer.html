@@ -150,32 +150,31 @@
     <!-- Header & Event Identity -->
     <header class="relative pb-6 border-b border-slate-200 mb-6">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <!-- Logos (AAIF & IEEE) -->
+        <!-- AAIF Primary Logo on the Left Side -->
         <div class="flex items-center gap-3">
-          <div class="flex items-center gap-2">
-            <div class="h-12 px-3 py-2 rounded-xl bg-white border border-slate-200 flex items-center shadow-inner">
-              <img src="assets/AAIF_Primary_Logo_Black.svg" alt="Agentic AI Foundation (AAIF) Logo" class="h-7 w-auto object-contain" />
-            </div>
-            <div class="h-8 w-px bg-slate-300" aria-hidden="true"></div>
-            <div class="h-12 px-3 py-2 rounded-xl bg-white border border-slate-200 flex items-center shadow-inner" title="IEEE Technical Co-Sponsor">
-              <img src="assets/IEEE_Logo.svg" alt="IEEE Logo" class="h-7 w-auto object-contain" />
-            </div>
+          <div class="h-12 px-3 py-2 rounded-xl bg-white border border-slate-200 flex items-center shadow-inner">
+            <img src="assets/AAIF_Primary_Logo_Black.svg" alt="Agentic AI Foundation (AAIF) Logo" class="h-7 w-auto object-contain" />
           </div>
           <div>
             <div class="text-[11px] font-mono uppercase tracking-widest text-[#C93B00] font-bold">Dallas Chapter</div>
-            <div class="text-sm font-extrabold text-slate-950">Agentic AI Foundation & IEEE</div>
+            <div class="text-sm font-extrabold text-slate-950">Agentic AI Foundation (AAIF.IO)</div>
           </div>
         </div>
 
-        <!-- Academic & Co-Sponsor Badges -->
-        <div class="flex flex-wrap items-center gap-2 text-[11px] font-mono">
-          <span
-            class="px-2.5 py-1 rounded-md bg-blue-50 text-blue-800 border border-blue-200 font-semibold flex items-center gap-1">
-            <i data-lucide="award" class="w-3 h-3 text-[#C93B00]"></i> In Cooperation with IEEE Dallas
-          </span>
-          <span class="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold">
-            UTD & SMU Student Chapters
-          </span>
+        <!-- IEEE Logo & Academic Badges on the Right Side -->
+        <div class="flex items-center gap-3">
+          <div class="flex flex-wrap items-center gap-2 text-[11px] font-mono">
+            <span
+              class="px-2.5 py-1 rounded-md bg-blue-50 text-blue-800 border border-blue-200 font-semibold flex items-center gap-1">
+              <i data-lucide="award" class="w-3 h-3 text-[#C93B00]"></i> In Cooperation with IEEE Dallas
+            </span>
+            <span class="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold">
+              UTD & SMU Student Chapters
+            </span>
+          </div>
+          <div class="h-12 px-3 py-2 rounded-xl bg-white border border-slate-200 flex items-center shadow-inner" title="IEEE Technical Co-Sponsor">
+            <img src="assets/IEEE_Logo.svg" alt="IEEE Logo" class="h-7 w-auto object-contain" />
+          </div>
         </div>
       </div>
 
@@ -344,8 +343,8 @@
         <span class="text-[11px] font-mono text-slate-600 font-semibold">Collaborative & Hospitality Partnerships</span>
       </div>
 
-      <!-- Food, Swag & Lab Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 mb-4">
+      <!-- Food, Swag, Lab & AV Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-4">
         
         <!-- Food & Hospitality -->
         <div class="p-3.5 rounded-xl bg-white border border-amber-200 shadow-sm flex flex-col justify-between">
@@ -413,6 +412,28 @@
           </div>
         </div>
 
+        <!-- Audio/Visual, Live Streaming & Podcast Studio -->
+        <div class="p-3.5 rounded-xl bg-white border border-blue-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-mono font-bold text-blue-800 uppercase bg-blue-50 px-2 py-0.5 rounded border border-blue-200">AV & Media Broadcast</span>
+              <i data-lucide="video" class="w-4 h-4 text-blue-700"></i>
+            </div>
+            <h3 class="text-xs font-bold text-slate-900 mb-1.5">AV, Live Stream & Podcast Setup</h3>
+            <p class="text-[11px] text-slate-700 leading-relaxed mb-2.5">
+              Power stage confidence monitors, live multi-camera broadcast production, and on-site podcast studio lounge recordings.
+            </p>
+            <ul class="text-[11px] space-y-1 text-slate-700 font-mono">
+              <li class="flex items-center gap-1.5"><span class="text-blue-700">▸</span> <strong>Confidence Monitors:</strong> Downstage speaker timers in Tracks A & B</li>
+              <li class="flex items-center gap-1.5"><span class="text-blue-700">▸</span> <strong>Live Streaming Support:</strong> Multi-camera 4K live broadcast & recording</li>
+              <li class="flex items-center gap-1.5"><span class="text-blue-700">▸</span> <strong>Podcast Space Setup:</strong> On-site lounge for founder & speaker interviews</li>
+            </ul>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-slate-200 text-[10px] text-blue-800 font-mono">
+            Stream lower-thirds, podcast backdrop & archive branding
+          </div>
+        </div>
+
       </div>
 
       <!-- Detailed Breakdown Table -->
@@ -475,32 +496,77 @@
               <td class="p-3 text-slate-700">Logo on GitHub lab repositories, devcontainer terminals & printed lab guides</td>
               <td class="p-3 text-[#B6B0D0] font-mono text-[11px]">Developer mindshare in live codebases</td>
             </tr>
+            <tr>
+              <th scope="row" class="p-3 font-semibold text-slate-900 text-left font-normal">
+                <div class="font-bold text-slate-900">Audio/Visual, Live Stream & Podcast Sponsor</div>
+                <div class="text-[10px] text-blue-800 font-mono">AV & Media Broadcast • Exclusive</div>
+              </th>
+              <td class="p-3 text-slate-700">Stage confidence monitors, multi-camera live streaming broadcast infrastructure, and on-site podcast studio lounge setup</td>
+              <td class="p-3 text-slate-700">Logo lower-thirds on global stream, backdrop branding in podcast space & verbal mention before keynote</td>
+              <td class="p-3 text-[#584F7C] font-mono text-[11px]">Executive spotlight interview on podcast + permanent archive attribution</td>
+            </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Partners & Academic Chapters Footer Grid -->
-    <section class="pt-5 border-t border-slate-200/80 mb-6">
-      <div class="text-[11px] font-mono uppercase tracking-widest text-slate-700 mb-3 font-bold">
-        Organizing & Co-Sponsoring Ecosystem
+    <!-- Core Team, Community Supporters & User Groups Ecosystem -->
+    <section class="pt-5 border-t border-slate-200/80 mb-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="text-[11px] font-mono uppercase tracking-widest text-slate-900 font-bold">
+          Organizing Ecosystem, Community Supporters & User Groups
+        </div>
+        <span class="text-[10px] font-mono text-slate-500 font-semibold">DFW AI Collaborative Network</span>
       </div>
-      <div class="flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-slate-700">
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-          <span><strong>AAIF Dallas</strong> (Agentic AI Foundation • AAIF.IO)</span>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+        <!-- Core Team -->
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="flex items-center gap-1.5 text-[#C93B00] font-bold text-[11px] font-mono uppercase mb-1.5">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+            <span>Core Organizing Team</span>
+          </div>
+          <p class="text-[11px] text-slate-600 leading-relaxed mb-2">
+            Steering committee, technical program chairs, lab architects & volunteer operations:
+          </p>
+          <ul class="text-[11px] text-slate-800 space-y-1 font-mono font-medium">
+            <li class="flex items-center gap-1.5"><span class="text-[#FF702D]">▸</span> <strong>AAIF Dallas:</strong> Chapter Leadership & Ops</li>
+            <li class="flex items-center gap-1.5"><span class="text-[#00629B]">▸</span> <strong>IEEE Dallas:</strong> Section Executive Committee</li>
+            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>Program Committee:</strong> Track A & B Leads</li>
+          </ul>
         </div>
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-          <span><strong>IEEE Dallas Section</strong> (Technical Co-Sponsor)</span>
+
+        <!-- Community Supporters & User Groups -->
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="flex items-center gap-1.5 text-[#584F7C] font-bold text-[11px] font-mono uppercase mb-1.5">
+            <i data-lucide="users" class="w-3.5 h-3.5"></i>
+            <span>Community & User Groups</span>
+          </div>
+          <p class="text-[11px] text-slate-600 leading-relaxed mb-2">
+            Active regional practitioner forums and engineering meetups across North Texas:
+          </p>
+          <ul class="text-[11px] text-slate-800 space-y-1 font-mono font-medium">
+            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>Dallas AI Community</strong></li>
+            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>DFW Multi-Agent & LLM User Group</strong></li>
+            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>North Texas GenAI Builders</strong></li>
+            <li class="flex items-center gap-1.5"><span class="text-[#584F7C]">▸</span> <strong>Women in AI North Texas</strong></li>
+          </ul>
         </div>
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span><strong>UTD AI Society</strong> (UT Dallas)</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
-          <span><strong>IEEE UTD & SMU</strong> Student Branches</span>
+
+        <!-- Academic & Student Chapters -->
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="flex items-center gap-1.5 text-emerald-800 font-bold text-[11px] font-mono uppercase mb-1.5">
+            <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+            <span>Academic & Student Chapters</span>
+          </div>
+          <p class="text-[11px] text-slate-600 leading-relaxed mb-2">
+            Fostering research, hackathons, and next-generation student talent pipelines:
+          </p>
+          <ul class="text-[11px] text-slate-800 space-y-1 font-mono font-medium">
+            <li class="flex items-center gap-1.5"><span class="text-emerald-700">▸</span> <strong>UTD AI Society</strong> (UT Dallas)</li>
+            <li class="flex items-center gap-1.5"><span class="text-blue-700">▸</span> <strong>IEEE UTD</strong> Student Branch</li>
+            <li class="flex items-center gap-1.5"><span class="text-blue-700">▸</span> <strong>IEEE SMU</strong> Student Branch</li>
+          </ul>
         </div>
       </div>
     </section>

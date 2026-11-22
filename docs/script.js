@@ -145,11 +145,10 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     if (localStorage.getItem('aaif-high-contrast') === 'true') {
       document.documentElement.classList.add('high-contrast');
-      const contrastBtn = document.getElementById('toggle-contrast-btn');
-      if (contrastBtn) {
-        contrastBtn.setAttribute('aria-pressed', 'true');
-        contrastBtn.classList.add('border-[#FF702D]');
-      }
+      document.querySelectorAll('.contrast-toggle-btn, #toggle-contrast-btn, #toggle-contrast-btn-mobile, #floating-contrast-btn').forEach(btn => {
+        btn.setAttribute('aria-pressed', 'true');
+        btn.classList.add('border-[#FF702D]');
+      });
     }
   } catch (e) {}
 });
@@ -157,13 +156,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Toggle High Contrast Mode for Visually Impaired Users (WCAG 1.4.3 / 1.4.6 Enhanced Contrast)
 function toggleHighContrast() {
   const isHighContrast = document.documentElement.classList.toggle('high-contrast');
-  const btn = document.getElementById('toggle-contrast-btn');
   const liveStatus = document.getElementById('schedule-live-status');
   
-  if (btn) {
+  document.querySelectorAll('.contrast-toggle-btn, #toggle-contrast-btn, #toggle-contrast-btn-mobile, #floating-contrast-btn').forEach(btn => {
     btn.setAttribute('aria-pressed', isHighContrast ? 'true' : 'false');
     btn.classList.toggle('border-[#FF702D]', isHighContrast);
-  }
+  });
   
   try {
     localStorage.setItem('aaif-high-contrast', isHighContrast ? 'true' : 'false');
